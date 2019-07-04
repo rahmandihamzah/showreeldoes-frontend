@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.verticalLine {
+    height: 300px;
+    border-left: 1px solid #313131;
+}
+
+.footer-container {
+    background-color: #525252;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-logo {
+    max-width: 150px;
+}
+
+.contact-us ul {
+    list-style: none;
+    max-width: 200px;
+}
+
+.contact-us ul li {
+    padding-top: 10px;
+}
+
+.discuss-form ul li {
+    list-style: none;
+    padding-top: 5px;
+}
+
+.discuss-form ul li input {
+    width: 250px;
+}
+
+.form-discuss {
+    background-color: #ffffff;
+    color: #525252;
+}

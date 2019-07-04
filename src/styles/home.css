@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.artwork-space {
+    border: 1px solid black;
+    width: 100%;
+    height: 86vh;
+    text-align: center;
+}
+
+.second-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.second-nav ul {
+    width: 30%;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-nav ul li a {
+    color: #313131;
+}
+
+.second-nav ul li a:hover {
+    text-decoration: none;
+    color: #ca3e47;
+}
+
+.showreel-highlight {
+    width: 100%;
+    background-color: #DEDEDE;
+    /* border: 1px solid black; */
+}
+
+.showreel-container {
+    /* border: 1px solid black; */
+    list-style: none;
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* display: flex; */
+    padding-top: 20px;
+}
+
+.showreel-space {
+    /* border: 1px solid #ffffff; */
+    width: 350px;
+    margin: 5px;
+    float: left;
+}
+
+.showreel-frame {
+    /* border: 1px solid black; */
+    border: 0;
+    background-color: #ffffff;
+    width: 350px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+.showreel-thumbnail {
+    border: 1px solid #dedede;
+    width: 96%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.showreel-thumbnail:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.button-linked {
+    text-align: center;
+}
+
+.btn-see {
+    background-color: #CA3E47 !important;
+    border-radius: 25px;
+    color: #525252 !important;
+}
+
+/* Partner Testimoni Start */
+.partner-testimoni-container {
+    width: 100%;
+    background-color: #d6d6d6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.partner-testimoni {
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel {
+    margin: auto;
+}
+
+.item-container {
+    /* width: 1000px; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.testi-title {
+    border: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding-top: 30px;
+}
+
+.testimoni-slider-item1 {
+    width: 200px;
+    text-align: center;
+}
+
+.testimoni-words p {
+    font-weight: unset;
+}
+
+.testimoni-partner ul {
+    padding-left: 0;
+}
+
+.testimoni-partner ul li {
+    list-style-type: none;
+}
+
+.testimoni-pict {
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+    border-radius: 100%;
+    transform: translate(-50%);
+    margin-left: 50%;
+    margin-bottom: 10px;
+}
+
+.partner-company {
+    font-size: 0.8rem;
+    color: #940D12;
+}
+
+/* Partner Testimoni End */
