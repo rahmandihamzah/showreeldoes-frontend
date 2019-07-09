@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/header.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Header extends Component {
     render() {
@@ -8,16 +9,24 @@ class Header extends Component {
                 <div className='navbar'>
                     <ul className="left-nav">
                         <li>
-                            <img src={require('../images/does-logo.png')} alt="nav-logo" className="nav-logo" />
+                            <Link to="/">
+                                <img src={require('../images/does-logo.png')} alt="nav-logo" className="nav-logo" />
+                            </Link>
                         </li>
                         <li>
-                            <a href="#">ABOUT</a>
+                            <Link to="/about">
+                                ABOUT
+                            </Link>
                         </li>
                         <li>
-                            <a href="#">DEPARTMENT</a>
+                            <Link to="/department">
+                                DEPARTMENT
+                            </Link>
                         </li>
                         <li>
-                            <a href="#">STUDENT</a>
+                            <Link to="/students">
+                                STUDENT
+                            </Link>
                         </li>
                         <li>
                             <a href="#">PARTNER</a>

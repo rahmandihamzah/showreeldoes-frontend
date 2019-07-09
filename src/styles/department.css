@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+.image-area {
+    border: 1px solid black;
+    width: 60vw;
+    height: 60vh;
+}
+
+.description-area {
+    max-width: 30vw;
+}
+
+.dept-desc {
+    text-align: justify;
+}
+
+.btn-to-showreel {
+    border-radius: 10px;
+    background-color: #ca3e47;
+}

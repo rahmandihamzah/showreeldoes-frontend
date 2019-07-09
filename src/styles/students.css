@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.seperate-line {
+    width: 50vw;
+}
+
+.sub-dept-list {
+    list-style: none;
+    width: fit-content;
+}
+
+.sub-dept-list li Link:hover {
+    font-style: none;
+}
