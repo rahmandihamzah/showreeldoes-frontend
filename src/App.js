@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons'
 
 
+import Login from './pages/login';
 import Home from './pages/home';
 import About from './pages/about';
 import Department from './pages/department';
@@ -19,7 +20,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/department" component={Department} />
         <Route path="/students" component={Students} />
