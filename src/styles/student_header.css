@@ -1,0 +1,45 @@
+* {
+    box-sizing      : border-box;
+    font-family     : 'Barlow', sans-serif;
+}
+
+.navbar {
+    color           : white;
+}
+.logo {
+    max-width       : 100px;
+    padding         : 10px;
+}
+.profile-icon {
+    max-width       : 60px;
+}
+.show-them-reel {
+    background-color: #d8d8d8; 
+}
+.show-them-reel h2 {
+    font-family     : Arial, Helvetica, sans-serif;
+}
+.togle-button {
+    background-color: transparent !important;
+    border          : none !important;
+}
+.togle-button:focus {
+    outline             : none;
+    -webkit-box-shadow  : none!important;
+    box-shadow          : none!important;
+}
+.file-upload {
+    padding         : 10px;
+    min-height      : 300px;
+    border          : 0.5px solid #7d7d7d;
+}
+.input-file {
+    display         : none;
+}
+.wrap {
+    position        : absolute;
+    width           : 100%;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+}

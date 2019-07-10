@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/login.css';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Logo from '../images/does-logo.png';
 
 class Login extends Component {
@@ -14,15 +16,17 @@ class Login extends Component {
                     </div>
                     <div className="form-wrapper ">
                         <div className="container d-flex justify-content-center">
-                            <div className="row col-6">
+                            <div className="row col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <Form className="form">
                                     <FormGroup >
                                         <Label className="">Username or Email</Label>
                                         <Input type="text" name="username" placeholder="Enter Username or Email" />
-                                        <Label className="mt-2">Password</Label>
+                                        <div className="d-flex align-items-start">
+                                        <Label className="mt-1">Password</Label>
+                                        <h6 className="mt-2 ml-2"><a href="#">Forgot?</a></h6>
+                                        </div>
                                         <Input type="password" name="password" placeholder="Enter  Password" />
-                                        <h6 className="mt-2"><a href="#">Forgot</a></h6>
-                                        <Button type="button" className="btn btn-danger float-right">Sign in</Button>
+                                        <Button type="button" className="btn btn-danger mt-2">Sign in</Button>
                                     </FormGroup>
                                 </Form>
                             </div>

@@ -3,12 +3,12 @@
 
 * {
     box-sizing  : border-box;
-    font-family : 'Quicksand', sans-serif;
+    font-family: 'Barlow', sans-serif;
     padding: 0;
     margin: 0;
 }
 .login-page {
-    background-color: black;
+    background-color: #525252;
     height          : 100vh;
     width           : 100%;
     color           : white;
@@ -17,7 +17,7 @@
 }
 .sign-in {
     /* font-size: 20px; */
-    color           :#a90000;
+    color           :#ca3e47;
     text-align      : center;
 }
 .form-wrapper {
@@ -30,16 +30,18 @@
     width           : 100%;
 }
 .login-logo img {
-    width: 25%;
+    width: 20%;
     
 }
 .form h6 a {
     text-decoration : none;
-    color           : #4c4c4c;
+    color           : #8e8e8e;
 }
 .form h6 a:hover
 {
     text-decoration : none;
     color           : red;
 }
-
+.btn {
+    width: 100%;
+}
