@@ -14,21 +14,12 @@ class StudentHeader extends Component {
             dropdownOpen: false,
             user: 'Rangga'
         }
-    }
+    };
     toggle() {
         this.setState(prevState => ({
             dropdownOpen: !prevState.dropdownOpen
         }))
-    }
-
-    linkPage(e) {
-        console.log(e)
-    }
-    upload() {
-        this.refs.upload.click()
-    }
-
-
+    };
     render() {
         return (
             <div>
@@ -60,21 +51,6 @@ class StudentHeader extends Component {
                     </ul>
                 </div>
                 {/* NAVBAR */}
-
-                {/* Upload File */}
-                <div className="p-4 wrap">
-                    <div className="file-upload d-flex justify-content-center align-items-center col-sm-12 col-md-12 col-xl-8 col-lg-8 mx-auto">
-                        <div className="input-form ">
-                            <input type="file" className="input-file" ref='upload' />
-                            <FontAwesomeIcon icon="cloud-upload-alt" className="fas fa-7x" onClick={() => this.upload()} />
-                            <p>Click to browse a file</p>
-                            <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style={{width: '0%'}}>
-                                <span id="current-progress"></span>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Upload File */}
-                </div>
             </div>
         )
     }

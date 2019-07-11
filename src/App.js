@@ -9,6 +9,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 
 import Login from './pages/login';
 import StudentUpload from './pages/student_upload';
+import StudentUploadDetail from './pages/student_upload_detail';
 import Home from './pages/home';
 import About from './pages/about';
 import Department from './pages/department';
@@ -23,6 +24,7 @@ function App() {
       <div>
         <Route exact path="/" component={Login} />
         <Route exact path="/student/upload" component={StudentUpload} />
+        <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/department" component={Department} />
