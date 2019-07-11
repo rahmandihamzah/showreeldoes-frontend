@@ -1,9 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
 }
 
 .seperate-line {
-    width: 50vw;
+    width: 30vw;
 }
 
 .sub-dept-list {
@@ -11,6 +12,62 @@
     width: fit-content;
 }
 
-.sub-dept-list li Link:hover {
-    font-style: none;
+.sub-dept-list li a:hover {
+    color: #ca3e47;
+    text-decoration: none;
+}
+
+.sub-dept-list li a {
+    list-style: none;
+    color: #525252;
+}
+
+.subdept-title {
+    list-style: none;
+}
+
+.sum-student {
+    font-size: 0.8rem;
+    color: #ca3e47;
+}
+
+.student-list-container {
+    list-style: none;
+}
+
+.profile-pic {
+    background-color: #000;
+    width: 100px;
+    height: 80px;
+    left: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-left-radius: 20%; */
+    /* border-bottom-left-radius: 50%; */
+}
+
+.profile-pic img {
+    width: 100%;
+    align-self: center;
+}
+
+.name-dept {
+    background-color: #e8e8e8;
+    border-bottom-right-radius: 50px;
+    width: 90%;
+    padding-left: 15px;
+}
+
+
+.seperate-name-dept {
+    width: 200px;
+}
+
+.pic-absolute {
+    right: 0;
+    top: -5px;
 }
