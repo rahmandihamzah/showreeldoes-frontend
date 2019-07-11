@@ -30,7 +30,7 @@ class Upload extends Component {
         return (
             <div>
                 <HeaderStudent />
-                <h2 className="show-them-reel d-flex justify-content-center">SHOW THEM REEL</h2>
+                <h2 className="show-them-reel d-flex justify-content-center">Show them you reel!</h2>
                 {/* Upload File */}
                 <div className="p-4 wrap">
                     <div className="file-upload d-flex justify-content-center align-items-center col-sm-12 col-md-12 col-xl-8 col-lg-8 mx-auto">

@@ -24,7 +24,7 @@ class StudentHeader extends Component {
         return (
             <div>
                 {/* Navbar */}
-                <div className="navbar">
+                <div className="navbar navbar-stud ">
                     <ul className="left-nav">
                         <li>
                             <Link to="/">
