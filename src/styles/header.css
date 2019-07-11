@@ -3,10 +3,10 @@
 }
 
 .navbar {
-    background-color: #313131;
+    /* background-color: transparent; */
+    background-image: linear-gradient(to right, #000000, #000000, #020607, #020506, #000000, #050d0e, #050d0f, #071214, #09191b, #13363c);
     display: flex;
     justify-content: space-between;
-    /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Barlow', sans-serif;
 }
 

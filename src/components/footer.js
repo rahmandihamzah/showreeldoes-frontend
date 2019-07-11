@@ -38,7 +38,7 @@ class Footer extends Component {
                                     </li>
                                 </ul>
                                 <div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.080685678864!2d110.31005241520683!3d-7.781269779363455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af7ea2fcf897f%3A0x1db5b3cf0b802342!2sDOES+University!5e0!3m2!1sid!2sid!4v1562638290416!5m2!1sid!2sid" className="footer-maps" allowfullscreen></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.080685678864!2d110.31005241520683!3d-7.781269779363455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af7ea2fcf897f%3A0x1db5b3cf0b802342!2sDOES+University!5e0!3m2!1sid!2sid!4v1562638290416!5m2!1sid!2sid" className="footer-maps" allowFullScreen></iframe>
                                 </div>
                             </div>
                             <div className='ml-4 mt-3 verticalLine'></div>
@@ -48,20 +48,20 @@ class Footer extends Component {
                                 </div>
                                 <form action="#" className='form-discuss mt-2 pl-2 pr-2 pb-2'>
                                     <ul className='p-0'>
-                                        <li>
-                                            <h7 className='m-0'>Name</h7><br />
+                                        <li className="mb-3">
+                                            <h6 className='m-0'>Name</h6>
                                             <input type="text" />
                                         </li>
-                                        <li>
-                                            <h7 className='m-0'>Email</h7><br />
+                                        <li className="mb-3">
+                                            <h6 className='m-0'>Email</h6>
                                             <input type="text" />
                                         </li>
-                                        <li>
-                                            <h7 className='m-0'>Subject</h7><br />
+                                        <li className="mb-3">
+                                            <h6 className='m-0'>Subject</h6>
                                             <input type="text" />
                                         </li>
-                                        <li>
-                                            <h7 className='m-0'>Message</h7><br />
+                                        <li className="mb-3">
+                                            <h6 className='m-0'>Message</h6>
                                             <input type="text" />
                                         </li>
                                     </ul>
