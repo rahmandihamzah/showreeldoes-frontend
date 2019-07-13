@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import '../styles/student_upload_detail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ImagePlaceholder from '../images/potrait.png'
+import ImagePlaceholder from '../images/1280x720.png'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios';
 
 
 import HeaderStudent from '../components/student_header';
 
 class StudentUploadDetail extends Component {
+    componentDidMount() {
+        console.log( 'kj7ikik', localStorage.getItem('tokenlogin'))
+        if (! this.props.match.params.id) {
+            this.props.history.push('/')
+            console.log('gak boleh masuyk')
+        } else {
+            console.log('MASULK')
+            console.log(this.props.match.params.id)
+            // axios.get('http://192.168.2.12:5000/v1/student/' + this.props.match.params.id).then(res => {
+            //     console.log(res)
+            //     this.setState({ student: res.data.student })
+            // })
+        }
+    }
     render() {
         return (
             <div>

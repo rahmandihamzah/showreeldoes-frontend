@@ -2,29 +2,39 @@ import React, { Component } from 'react';
 import '../styles/student_upload.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeaderStudent from '../components/student_header';
+import axios from 'axios';
+import {withRouter, Redirect} from 'react-router-dom'
 
 
 class Upload extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            student: {},
+        }
+    }
     linkPage(e) {
         console.log(e)
     }
     upload() {
         this.refs.upload.click()
     }
-    // componentDidMount() {
-    //     this.$(function() {
-    //         var current_progress = 0;
-    //         var interval = setInterval(function () {
-    //             current_progress += 10;
-    //             this.$("#dynamic")
-    //                 .css("width", current_progress + "%")
-    //                 .attr("aria-valuenow", current_progress)
-    //                 .text(current_progress + "% Complete");
-    //             if (current_progress >= 100)
-    //                 clearInterval(interval);
-    //         }, 1000);
-    //     });
-    // }
+    componentDidMount() {
+        console.log( 'kj7ikik', localStorage.getItem('tokenlogin'))
+        if (! this.props.match.params.id) {
+            this.props.history.push('/')
+            console.log('gak boleh masuyk')
+        } else {
+            console.log('MASULK')
+            console.log(this.props.match.params.id)
+            axios.get('http://192.168.2.12:5000/v1/student/' + this.props.match.params.id).then(res => {
+                console.log(res)
+                this.setState({ student: res.data.student })
+                localStorage.setItem('student', JSON.stringify(res.data.student))
+            })
+        }
+    }
 
     render() {
         return (
@@ -50,4 +60,4 @@ class Upload extends Component {
     }
 }
 
-export default Upload;
+export default withRouter(Upload);
