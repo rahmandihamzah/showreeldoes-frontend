@@ -32,7 +32,7 @@ class Home extends Component {
                 <div className='showreel-highlight'>
                     {/* <div className='container'> */}
                     {/* <Container> */}
-                    <ul className='showreel-container row m-0 justify-content-center'>
+                    <ul className='showreel-container row mx-3 justify-content-start'>
                         <li className='showreel-space'>
                             <div className='showreel-frame'>
                                 <div className='showreel-thumbnail'>
