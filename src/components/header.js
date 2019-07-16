@@ -29,14 +29,16 @@ class Header extends Component {
                             </Link>
                         </li>
                         <li>
-                            <a href="#">PARTNER</a>
+                            <Link to="/partner">
+                                PARTNER
+                            </Link>
                         </li>
                     </ul>
-                    <ul className="right-nav">
+                    {/* <ul className="right-nav">
                         <li>
                             <a href="#">Sign In</a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         )

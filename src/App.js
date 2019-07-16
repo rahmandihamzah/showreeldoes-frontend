@@ -11,6 +11,8 @@ import Home from './pages/home';
 import About from './pages/about';
 import Department from './pages/department';
 import Students from './pages/students';
+import StudentProfile from './pages/studentProfile';
+import Partner from './pages/partner';
 
 
 library.add(faGhost);
@@ -23,6 +25,8 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/department" component={Department} />
         <Route path="/students" component={Students} />
+        <Route path="/studentProfile/:id" component={StudentProfile} />
+        <Route path="/partner" component={Partner} />
       </div>
     </Router>
   )
