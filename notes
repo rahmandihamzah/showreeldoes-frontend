@@ -1,0 +1,160 @@
+<div className="3dmodeler-student-list">
+                            <ul className="student-list-container row p-0 justify-content-center">
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="student-list-frame m-2 mb-4">
+                                    <div className="student-detail-space d-flex align-items-center">
+                                        <div className="profile-pic position-relative">
+                                            {/* <img src={require('')} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                        </div>
+                                        <div className="name-dept d-flex flex-column justify-content-center">
+                                            <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                            <hr className="m-0 seperate-name-dept" />
+                                            <p className="m-0 pl-2">3D Modeler</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>

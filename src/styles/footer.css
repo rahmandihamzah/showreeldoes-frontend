@@ -3,13 +3,14 @@
 }
 
 .verticalLine {
-    height: 300px;
-    border-left: 1px solid #313131;
+    height: 370px;
+    border-left: 1px solid rgba(232, 241, 241, 0.787);
     opacity: 0.3;
 }
 
 .footer-container {
-    background-color: #525252;
+    background-image: linear-gradient(to right, #000000, #000000, #020607, #020506, #000000, #050d0e, #050d0f, #071214, #09191b, #13363c);
+    /* background-color: #525252; */
     width: 100%;
 }
 

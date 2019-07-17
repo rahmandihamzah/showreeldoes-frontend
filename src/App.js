@@ -15,6 +15,8 @@ import About from './pages/about';
 import Department from './pages/department';
 import Students from './pages/students';
 import ProfileStudent from './pages/profile_student';
+import StudentProfile from './pages/studentProfile';
+import Partner from './pages/partner';
 
 
 library.add(faGhost, fas);
@@ -32,6 +34,8 @@ function App() {
         <Route path="/department" component={Department} />
         <Route path="/students" component={Students} />
         <Route render={() => <Redirect to={{pathname: '/login'}} />} />
+        <Route path="/studentProfile/:id" component={StudentProfile} />
+        <Route path="/partner" component={Partner} />
       </div>
     </Router>
   )
