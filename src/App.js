@@ -25,15 +25,15 @@ function App() {
   return (  
     <Router>
       <div>
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/student" component={Login} />
         <Route exact path="/student/upload/:id" component={StudentUpload} />
         <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/student/profile" component={ProfileStudent} />
-        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Home} /> 
         <Route path="/about" component={About} />
         <Route path="/department" component={Department} />
         <Route path="/students" component={Students} />
-        <Route render={() => <Redirect to={{pathname: '/login'}} />} />
+        <Route render={() => <Redirect to={{pathname: '/'}} />} />
         <Route path="/studentProfile/:id" component={StudentProfile} />
         <Route path="/partner" component={Partner} />
       </div>
