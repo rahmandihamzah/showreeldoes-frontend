@@ -18,6 +18,7 @@ import AnimatorShowreel from './pages/animatorShowreel';
 import CompositorShowreel from './pages/compositorShowreel';
 import ProgrammerShowreel from './pages/programmerShowreel';
 
+library.add(faGhost);
 
 function App() {
   return (
