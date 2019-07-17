@@ -1,0 +1,27 @@
+* {
+    box-sizing      : border-box;
+    font-family     : 'Barlow', sans-serif;
+}
+
+.navbar {
+    color           : white;
+}
+.navbar-stud {
+    z-index: 1;
+}
+.logo {
+    max-width       : 100px;
+    padding         : 10px;
+}
+.profile-icon {
+    max-width       : 60px;
+}
+.togle-button {
+    background-color: transparent !important;
+    border          : none !important;
+}
+.togle-button:focus {
+    outline             : none;
+    -webkit-box-shadow  : none!important;
+    box-shadow          : none!important;
+}

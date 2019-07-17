@@ -1,0 +1,27 @@
+.wrap-preview {
+    background-color: #313131;
+    /* margin-top: 5rem; */
+}
+.preview {
+    background-color: #fff;
+    background-color: #313131;
+}
+.image-placeholder {
+    width: 200px;
+    /* height: 650px; */
+    /* display: inline-block;
+    position: relative;
+    overflow: hidden; */
+}
+.image-placeholder img {
+    /* background      : #313131; */
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+}
+.form-detail input {
+    /* width           : 30%; */
+}
+.upload-save {
+
+}
