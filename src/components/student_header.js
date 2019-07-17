@@ -37,8 +37,8 @@ class StudentHeader extends Component {
         return (
             <div>
                 {/* Navbar */}
-                <div className="navbar navbar-stud ">
-                    <ul className="left-nav">
+                <div className="navbar navbar-stud">
+                    <ul className="left-nav d-inline">
                         <li>
                             <Link to="/">
                                 <img className="logo" src={Logo} />
