@@ -14,6 +14,7 @@ class Students extends Component {
     }
 
     render() {
+
         var settings = {
             dots: true,
             infinite: true,

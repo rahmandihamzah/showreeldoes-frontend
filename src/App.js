@@ -17,7 +17,10 @@ import Students from './pages/students';
 import ProfileStudent from './pages/profile_student';
 import StudentProfile from './pages/studentProfile';
 import Partner from './pages/partner';
-
+import ModelerShowreel from './pages/modelerShowreel';
+import AnimatorShowreel from './pages/animatorShowreel';
+import CompositorShowreel from './pages/compositorShowreel';
+import ProgrammerShowreel from './pages/programmerShowreel';
 
 library.add(faGhost, fas);
 
@@ -36,6 +39,10 @@ function App() {
         <Route render={() => <Redirect to={{pathname: '/'}} />} />
         <Route path="/studentProfile/:id" component={StudentProfile} />
         <Route path="/partner" component={Partner} />
+        <Route path="/modelerShowreel" component={ModelerShowreel} />
+        <Route path="/animatorShowreel" component={AnimatorShowreel} />
+        <Route path="/compositorShowreel" component={CompositorShowreel} />
+        <Route path="/programmerShowreel" component={ProgrammerShowreel} />
       </div>
     </Router>
   )

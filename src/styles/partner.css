@@ -26,3 +26,27 @@
 .partnersite {
     font-size: 0.8rem;
 }
+
+.testimoni-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.testimoni-frame {
+    max-width: 70%;
+}
+
+.partner-profile ul {
+    list-style: none;
+}
+
+.testimoni-pic {
+    border: 1px solid black;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.partner-inst {
+    font-size: 0.8rem;
+}
