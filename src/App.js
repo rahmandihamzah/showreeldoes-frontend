@@ -13,9 +13,11 @@ import Department from './pages/department';
 import Students from './pages/students';
 import StudentProfile from './pages/studentProfile';
 import Partner from './pages/partner';
+import ModelerShowreel from './pages/modelerShowreel';
+import AnimatorShowreel from './pages/animatorShowreel';
+import CompositorShowreel from './pages/compositorShowreel';
+import ProgrammerShowreel from './pages/programmerShowreel';
 
-
-library.add(faGhost);
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
         <Route path="/students" component={Students} />
         <Route path="/studentProfile/:id" component={StudentProfile} />
         <Route path="/partner" component={Partner} />
+        <Route path="/modelerShowreel" component={ModelerShowreel} />
+        <Route path="/animatorShowreel" component={AnimatorShowreel} />
+        <Route path="/compositorShowreel" component={CompositorShowreel} />
+        <Route path="/programmerShowreel" component={ProgrammerShowreel} />
       </div>
     </Router>
   )
