@@ -20,11 +20,17 @@ class StudentHeader extends Component {
             dropdownOpen: !prevState.dropdownOpen
         }))
     };
+    componentDidMount() {
+        axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id).then(res => {
+            console.log('header', res)
+            // this.setState({ student: res.data.student })
+        })
+    }
 
     signout() {
-        axios.get('http://192.168.2.11:5000/v1/logout').then(res => {
+        axios.get('http://192.168.2.12:5000/v1/logout').then(res => {
             console.log(res)
-            if (res.data.login === false){
+            if (res.data.login === false) {
                 localStorage.removeItem('tokenlogin')
                 this.props.history.push('/')
             }
@@ -33,7 +39,7 @@ class StudentHeader extends Component {
 
 
     render() {
-        const nama = JSON.parse(localStorage.getItem("student"));
+        const data = JSON.parse(localStorage.getItem("student"));
         return (
             <div>
                 {/* Navbar */}
@@ -46,7 +52,7 @@ class StudentHeader extends Component {
                         </li>
                     </ul>
                     <ul className="right-nav d-flex">
-                        <p className="align-self-center m-0"> Hai, {nama.full_name}</p>
+                        <p className="align-self-center m-0"> Hai, {data.student}</p>
                         <li>
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                 <DropdownToggle className="togle-button">

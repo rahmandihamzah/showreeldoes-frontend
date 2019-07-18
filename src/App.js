@@ -28,17 +28,17 @@ function App() {
       {/* User Pengunjung */}
         {/* <Route render={() => <Redirect to={{pathname: '/'}} />} /> */}
         <Route exact path="/" component={Home} /> 
-        <Route path="/about" component={About} />
-        <Route path="/department" component={Department} />
-        <Route path="/partner" component={Partner} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/department" component={Department} />
+        <Route exact path="/partner" component={Partner} />
 
       {/* User Student */}
         <Route exact path="/student" component={Login} />
         <Route exact path="/student/upload/:id" component={StudentUpload} />
         <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/student/profile" component={ProfileStudent} />
-        <Route path="/students" component={Students} />
-        <Route path="/studentProfile" component={StudentProfile} />
+        <Route exact path="/students" component={Students} />
+        <Route exact path="/studentProfile" component={StudentProfile} />
       </div>
     </Router>
   )

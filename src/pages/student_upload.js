@@ -22,18 +22,11 @@ class Upload extends Component {
     }
     componentDidMount() {
         console.log( 'kj7ikik', localStorage.getItem('tokenlogin'))
-        if (! this.props.match.params.id) {
-            this.props.history.push('/')
-            console.log('gak boleh masuyk')
-        } else {
-            console.log('MASULK')
-            console.log(this.props.match.params.id)
-            axios.get('http://192.168.2.12:5000/v1/student/' + this.props.match.params.id).then(res => {
-                console.log(res)
+            axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id).then(res => {
+                console.log('erroorrrrrr',res)
                 this.setState({ student: res.data.student })
                 localStorage.setItem('student', JSON.stringify(res.data.student))
             })
-        }
     }
 
     render() {

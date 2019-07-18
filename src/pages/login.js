@@ -23,7 +23,6 @@ class Login extends Component {
         fetch('http://192.168.2.12:5000/v1/users')
             .then(blob => blob.json())
             .then(data => {
-                // console.table(data);
                 return data;
             })
             .catch(e => {
@@ -47,7 +46,7 @@ class Login extends Component {
             password: this.state.password,
             username: this.state.username
         }
-        axios.post('http://192.168.2.11:5000/v1/login', data).then(res =>{
+        axios.post('http://192.168.2.12:5000/v1/login', data).then(res =>{
             console.log(res)
             localStorage.setItem('tokenlogin', res.data.token)
             this.props.history.push('/student/upload/' + res.data.data.user.id_student)
