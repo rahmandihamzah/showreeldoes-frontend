@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+}
+
+.round {
+    /* border: 10px solid #000000; */
+    border-radius: 50px;
+}
+
+.showreel-profile-list {
+    /* width: 100%; */
+    background-color: #DEDEDE;
+    display: flex;
+    justify-content: center;
+    font-family: 'Barlow', sans-serif;
+}
+.wrap-content {
+    margin-top: 5rem;
+}
