@@ -43,7 +43,7 @@ class StudentHeader extends Component {
         return (
             <div>
                 {/* Navbar */}
-                <div className="navbar navbar-stud">
+                <div className="navbar fixed-top navbar-stud p-0 m-0">
                     <ul className="left-nav d-inline">
                         <li>
                             <Link to="/">
@@ -52,7 +52,7 @@ class StudentHeader extends Component {
                         </li>
                     </ul>
                     <ul className="right-nav d-flex">
-                        <p className="align-self-center m-0"> Hai, {data.student}</p>
+                        <p className="align-self-center m-0"> Hai,</p>
                         <li>
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                 <DropdownToggle className="togle-button">

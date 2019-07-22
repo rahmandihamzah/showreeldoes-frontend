@@ -6,15 +6,18 @@
     font-size: 1.6rem;
 }
 
-.student-identity-area {
-    border: 1px solid #000000;
+.round {
+    /* border: 10px solid #000000; */
     border-radius: 50px;
 }
 
 .showreel-profile-list {
-    width: 100%;
+    /* width: 100%; */
     background-color: #DEDEDE;
     display: flex;
     justify-content: center;
     font-family: 'Barlow', sans-serif;
+}
+.wrap-content {
+    margin-top: 5rem;
 }
