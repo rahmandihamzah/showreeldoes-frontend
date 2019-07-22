@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+.sub-title {
+    font-weight: normal;
+    font-size: 2rem;
+}
