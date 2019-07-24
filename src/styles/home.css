@@ -14,22 +14,18 @@
 }
 
 .second-nav {
-    /* width: 30%; */
-    /* margin: 0;
-    padding: 10px; */
-    /* font-family: 'Montserrat', sans-serif; */
     list-style: none;
     font-family: 'Barlow', sans-serif;
 }
 
 .second-nav li a {
     color: #313131;
-    font-style: none;
 }
 
-.second-nav ul li a:hover {
+.second-nav li a:hover {
     text-decoration: none;
     color: #ca3e47;
+    font-style: none;
 }
 
 .showreel-highlight {
