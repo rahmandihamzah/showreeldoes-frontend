@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.showreel-play-container {
+    background-image: linear-gradient(to right, #000000, #000000, #020607, #020506, #000000, #050d0e, #050d0f, #071214, #09191b, #13363c);
+    width: 100%;
+    height: 75vh;
+}
+
+.showreel-play-frame {
+    border: 1px solid black;
+    background-color: #fff;
+    width: 80%;
+    height: 90%;
+}
+
+.showreel-description {
+    font-size: 1.2rem;
+    max-width: 50%;
+}
+
+.see-more {
+    color: grey;
+}

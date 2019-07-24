@@ -14,22 +14,20 @@ class Home extends Component {
                 <Header />
                 <div className='artwork-space'>
                 </div>
-                <div className='second-nav'>
-                    <ul>
-                        <li>
-                            <a href="#">3D Modeler</a>
-                        </li>
-                        <li>
-                            <a href="#">Animator</a>
-                        </li>
-                        <li>
-                            <a href="#">Compositor</a>
-                        </li>
-                        <li>
-                            <a href="#">Programmer</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul className="second-nav d-flex justify-content-center">
+                    <li className="px-1 px-md-4">
+                        <a href="#">3D Modeler</a>
+                    </li>
+                    <li className="px-1 px-md-4">
+                        <a href="#">Animator</a>
+                    </li>
+                    <li className="px-1 px-md-4">
+                        <a href="#">Compositor</a>
+                    </li>
+                    <li className="px-1 px-md-4">
+                        <a href="#">Programmer</a>
+                    </li>
+                </ul>
                 <ShowreelList />
                 <Footer />
             </div>

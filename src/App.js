@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/App.css';
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, HashRouter } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons'
@@ -17,6 +17,7 @@ import ModelerShowreel from './pages/modelerShowreel';
 import AnimatorShowreel from './pages/animatorShowreel';
 import CompositorShowreel from './pages/compositorShowreel';
 import ProgrammerShowreel from './pages/programmerShowreel';
+import ShowreelDetail from './pages/showreelDetail';
 
 // student
 import Login from './pages/login';
@@ -29,31 +30,32 @@ import StudentUploadDetail from './pages/student_upload_detail';
 library.add(faGhost, fas);
 
 function App() {
-  return (  
-    <Router>
-      <div>
+  return (
+    <div>
+      <Router>
         {/* pengunjung */}
-        <Route exact path="/" component={Home} /> 
-        <Route path="/about" component={About} />
-        <Route path="/department" component={Department} />
-        <Route path="/partner" component={Partner} />
-        <Route path="/students" component={Students} />
-        <Route path="/studentProfile/:id" component={StudentProfile} />
-        <Route path="/modelerShowreel" component={ModelerShowreel} />
-        <Route path="/animatorShowreel" component={AnimatorShowreel} />
-        <Route path="/compositorShowreel" component={CompositorShowreel} />
-        <Route path="/programmerShowreel" component={ProgrammerShowreel} />
-        
+        <Route exact path="/" component={Home} />
+        <Route exact path="/department" component={Department} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/partner" component={Partner} />
+        <Route exact path="/students" component={Students} />
+        <Route exact path="/studentProfile/:id" component={StudentProfile} />
+        <Route exact path="/modelerShowreel" component={ModelerShowreel} />
+        <Route exact path="/animatorShowreel" component={AnimatorShowreel} />
+        <Route exact path="/compositorShowreel" component={CompositorShowreel} />
+        <Route exact path="/programmerShowreel" component={ProgrammerShowreel} />
+        <Route exact path="/showreelDetail/:id" component={ShowreelDetail} />
+
         {/* student */}
         <Route exact path="/student" component={Login} />
         <Route exact path="/student/upload/:id" component={StudentUpload} />
         <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/student/profile" component={ProfileStudent} />
-        <Route render={() => <Redirect to={{pathname: '/'}} />} />
+        {/* <Route render={() => <Redirect to={{ pathname: '/' }} />} /> */}
 
         {/* admin */}
-      </div>
-    </Router>
+      </Router>
+    </div>
   )
 }
 

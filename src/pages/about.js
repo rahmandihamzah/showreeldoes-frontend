@@ -11,7 +11,7 @@ class About extends Component {
                 <div className="page-title text-center">
                     ABOUT
                 </div>
-                <div className="about-container container d-flex">
+                <div className="about-container container d-flex flex-column-reverse flex-md-row">
                     <div className="about-description align-self-center text-justify p-3">
                         Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Aliquam tristique ex vitae
@@ -31,7 +31,7 @@ class About extends Component {
     Nullam a vestibulum ligula, eu porttitor
     lectus. Donec ut hendrerit mi.
                     </div>
-                    <div className="artwork-space-about"></div>
+                    <div className="artwork-space-about col-12 col-md-5"></div>
                 </div>
                 <div className="container text-center mt-5 d-flex flex-column">
                     <i className="fas fa-quote-right fa-3x mb-1"></i>
