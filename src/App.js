@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/student/upload/:id" component={StudentUpload} />
         <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/student/profile" component={ProfileStudent} />
-
+    
         {/* admin */}
       </Router>
     </div>
