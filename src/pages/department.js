@@ -12,9 +12,9 @@ class Department extends Component {
                 <div className="page-title text-center">
                     DEPARTMENT
                 </div>
-                <div className="dept-desc-container d-flex justify-content-center align-items-center">
-                    <div className="image-area m-3"></div>
-                    <div className="description-area">
+                <div className="dept-desc-container d-flex flex-column flex-md-row justify-content-center align-items-center px-4">
+                    <div className="image-area m-3 col-12 col-md-7"></div>
+                    <div className="description-area col-md-5 col-12">
                         <p className="dept-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
     elit. Aliquam tristique ex vitae interdum efficitur. Nam
@@ -29,8 +29,8 @@ class Department extends Component {
                         </Link>
                     </div>
                 </div>
-                <div className="dept-desc-container d-flex justify-content-center align-items-center">
-                    <div className="description-area d-flex flex-column align-items-end">
+                <div className="dept-desc-container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center px-4">
+                    <div className="description-area col-md-5 d-flex flex-column align-items-end col-12">
                         <p className="dept-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
     elit. Aliquam tristique ex vitae interdum efficitur. Nam
@@ -44,11 +44,11 @@ class Department extends Component {
                             <button className="button-linked btn-to-showreel pl-5 pr-5 border-0">Animator Showreel</button>
                         </Link>
                     </div>
-                    <div className="image-area m-3"></div>
+                    <div className="image-area m-3 col-12 col-md-7"></div>
                 </div>
-                <div className="dept-desc-container d-flex justify-content-center align-items-center">
-                    <div className="image-area m-3"></div>
-                    <div className="description-area">
+                <div className="dept-desc-container d-flex flex-column flex-md-row justify-content-center align-items-center px-4">
+                    <div className="image-area m-3 col-12 col-md-7"></div>
+                    <div className="description-area col-md-5 col-12">
                         <p className="dept-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
     elit. Aliquam tristique ex vitae interdum efficitur. Nam
@@ -63,8 +63,8 @@ class Department extends Component {
                         </Link>
                     </div>
                 </div>
-                <div className="dept-desc-container d-flex justify-content-center align-items-center">
-                    <div className="description-area d-flex flex-column align-items-end">
+                <div className="dept-desc-container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center px-4">
+                    <div className="description-area col-md-5 d-flex flex-column align-items-end col-12">
                         <p className="dept-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
     elit. Aliquam tristique ex vitae interdum efficitur. Nam
@@ -78,7 +78,7 @@ class Department extends Component {
                             <button className="button-linked btn-to-showreel pl-5 pr-5 border-0">Programmer Showreel</button>
                         </Link>
                     </div>
-                    <div className="image-area m-3"></div>
+                    <div className="image-area m-3 col-12 col-md-7"></div>
                 </div>
                 <Footer />
             </div>

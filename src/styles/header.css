@@ -8,9 +8,11 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Barlow', sans-serif;
+    color: #ffffff;
 }
 
 .left-nav {
+    /* border: 1px solid #ffffff; */
     width: 25%;
     margin: 0;
     padding: 0;
@@ -32,11 +34,11 @@
     padding: 10px;
 }
 
-.left-nav a {
+.left-nav li a {
     color: #ffffff;
 }
 
-.left-nav a:hover {
+.left-nav li a:hover {
     text-decoration: none;
     color: #ca3e47;
 }

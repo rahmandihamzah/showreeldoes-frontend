@@ -11,7 +11,7 @@ class CompositorShowreel extends Component {
                 <Header />
                 <div className="page-title text-center">
                     <p className="mb-0">COMPOSITOR</p>
-                    <hr className="seperate-line my-0" />
+                    <hr className="seperate-line my-0 mx-auto" />
                     <p className="sub-title">SHOWREEL</p>
                 </div>
                 <ShowreelList />

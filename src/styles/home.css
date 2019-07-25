@@ -14,28 +14,18 @@
 }
 
 .second-nav {
-    display: flex;
-    justify-content: center;
-}
-
-.second-nav ul {
-    width: 30%;
-    margin: 0;
-    padding: 10px;
     list-style: none;
-    /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Barlow', sans-serif;
-    display: flex;
-    justify-content: space-between;
 }
 
-.second-nav ul li a {
+.second-nav li a {
     color: #313131;
 }
 
-.second-nav ul li a:hover {
+.second-nav li a:hover {
     text-decoration: none;
     color: #ca3e47;
+    font-style: none;
 }
 
 .showreel-highlight {
@@ -63,7 +53,6 @@
 .showreel-space {
     /* border: 1px solid #ffffff; */
     width: 287px;
-    margin: 5px;
 }
 
 .showreel-frame {
