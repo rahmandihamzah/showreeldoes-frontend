@@ -1,24 +1,66 @@
 .file-upload {
     padding         : 10px;
-    min-height      : 300px;
-    border          : 0.5px solid #7d7d7d;
-}
-.file-upload:hover {
-    background-color: #cacaca;
-}
-.input-file {
-    display         : none;
-}
-.wrap {
     position        : absolute;
-    width           : 100%;
     top             : 50%;
     left            : 50%;
     transform       : translate(-50%, -50%);
+
+}
+.input-file {
+    display         : none;
 }
 .show-them-reel {
     background-color: #d8d8d8; 
     font-family     : Arial, Helvetica, sans-serif;
     padding         : 15px;
     color           : #525252;
+    margin-top      : 4rem;
+}
+.file-preview {
+    max-width       : 100%;
+    transition: opacity 0.3s linear;
+}
+.wrapper-image {
+    background: black;
+}
+
+.wrapper-image:hover .btn-change{
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    /* transition: all 1s ease; */
+}
+.wrapper-image:hover .btn-upload{
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    /* transition: all 1s ease; */
+}
+.wrapper-image:hover .file-preview {
+    opacity: 0.4;
+}
+.hover-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+.btn-change {
+    visibility: hidden;
+    font-weight: 300;
+    color: white;
+    background: #ffc107;
+    border: none;
+    opacity: 0;
+    transition: visibility 0s , opacity.3s linear;
+}
+.btn-upload {
+    visibility: hidden;
+    opacity: 0;
+    font-weight: 300;
+    color: white;
+    background: #dc3545;
+    border: none;
+    transition: visibility 0s , opacity.3s linear;
 }
