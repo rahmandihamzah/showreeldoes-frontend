@@ -5,8 +5,27 @@ import '../styles/students.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import DummyPicture from '../images/does-logo.png';
 import Slider from 'react-slick';
+import axios from 'axios';
 
 class Students extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            students: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://192.168.2.11:5000/v1/students')
+            .then((response) => {
+                // console.log(response.data.students)
+                this.setState({
+                    students: response.data.students
+                })
+                console.log(this.state.students)
+            })
+    }
 
     linkToProfile(e) {
         console.log(e)
@@ -84,319 +103,23 @@ class Students extends Component {
                         <div className="3dmodeler-student-list">
                             <div className="student-list-container">
                                 <Slider {...settings}>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                    {this.state.students.map((res, i) => {
+                                        return (
+                                            <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4" key={i}>
+                                                <div className="student-detail-space d-flex align-items-center">
+                                                    <div className="profile-pic position-relative">
+                                                        {/* <img src={require('')} alt=""/> */}
+                                                        {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                                    </div>
+                                                    <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
+                                                        <p className="m-0 pl-2 font-weight-bold">{res.full_name}</p>
+                                                        <hr className="m-0 seperate-name-dept" />
+                                                        <p className="m-0 pl-2">{res.department}</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* ------------------------------------------------------------------------------------------------------------------------- */}
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="student-list-frame mb-4 col-12 col-md-6 col-lg-4">
-                                        <div className="student-detail-space d-flex align-items-center">
-                                            <div className="profile-pic position-relative">
-                                                {/* <img src={require('')} alt=""/> */}
-                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
-                                            </div>
-                                            <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile("student.id")}>
-                                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
-                                                <hr className="m-0 seperate-name-dept" />
-                                                <p className="m-0 pl-2">3D Modeler</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        )
+                                    })}
                                 </Slider>
                             </div>
                         </div>
