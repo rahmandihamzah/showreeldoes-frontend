@@ -3,11 +3,35 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import ShowreelList from '../components/showreelList';
 import '../styles/home.css'
-// import Container from 'react-bootstrap/Container';
-import { Container, Row, Col } from 'reactstrap';
-// var fontAwesome = require('react-fontawesome');
+
+import axios from 'axios';
 
 class Home extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            showreels: [],
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://192.168.2.11:5000/v1/showreels')
+            .then((response) => {
+                console.log(response.data)
+                this.setState({
+                    showreels: response.data.showreel
+                })
+                console.log(this.state.showreels)
+            })
+    }
+
+    linkToShowreelDetail(e) {
+        console.log(e)
+        this.props.history.push('/showreelDetail/' + e)
+    }
+
+
     render() {
         return (
             <div>
@@ -28,7 +52,39 @@ class Home extends Component {
                         <a href="programmerShowreel">Programmer</a>
                     </li>
                 </ul>
-                <ShowreelList />
+                <div className='showreel-highlight'>
+                    {/* <div className='container'> */}
+                    {/* <Container> */}
+                    <ul className='showreel-container row mx-3 justify-content-start row'>
+
+                        {this.state.showreels.map((res, i) => {
+                            return (
+                                <li className='col-6 col-md-4 col-lg-2 px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
+                                    <div className='showreel-frame'>
+                                        <div className='showreel-thumbnail'>
+                                            <img src={res.url} alt="" className="img-thumbnail" />
+                                        </div>
+                                        <div className='showreel-resp'>
+                                            {/* <ul>
+                                            <li></li>
+                                        </ul>
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul> */}
+                                        </div>
+                                    </div>
+                                    <div className='creator'>
+                                        creator
+                                    </div>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    {/* </div> */}
+                    {/* </Container> */}
+                </div>
                 <Footer />
             </div>
         )
