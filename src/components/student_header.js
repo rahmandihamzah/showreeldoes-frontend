@@ -13,8 +13,9 @@ class StudentHeader extends Component {
         this.toggle = this.toggle.bind(this)
         this.state = {
             dropdownOpen: false,
+            
         }
-    };
+    }
     toggle() {
         this.setState(prevState => ({
             dropdownOpen: !prevState.dropdownOpen
@@ -39,26 +40,26 @@ class StudentHeader extends Component {
 
 
     render() {
-        const data = JSON.parse(localStorage.getItem("student"));
+        // const data = JSON.parse(localStorage.getItem("student"));
         return (
             <div>
                 {/* Navbar */}
                 <div className="navbar fixed-top navbar-stud p-0 m-0">
                     <ul className="left-nav d-inline">
-                        <li>
+                        <li className="ml-lg-3">
                             <Link to="/">
                                 <img className="logo" src={Logo} />
                             </Link>
                         </li>
                     </ul>
-                    <ul className="right-nav d-flex">
-                        <p className="align-self-center m-0"> Hai,</p>
-                        <li>
-                            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                    <ul className="right-nav d-flex p-0 mr-lg-4">
+                        <p className="align-self-center my-lg-0 mr-lg-3 m-0"> Hai, I am student</p>
+                        <li className="mr-2">
+                            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="shadow">
                                 <DropdownToggle className="togle-button">
                                     <img className="profile-icon" src={ProfileIcon} />
                                 </DropdownToggle>
-                                <DropdownMenu right>
+                                <DropdownMenu right className="m-0">
                                     <DropdownItem onClick={() => this.linkPage('profile')}>Profile</DropdownItem>
                                     <DropdownItem divider />
                                     <DropdownItem onClick={() => this.signout()}>

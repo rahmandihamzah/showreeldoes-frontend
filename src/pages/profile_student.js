@@ -25,7 +25,7 @@ class StudentProfile extends Component {
     }
 
     render() {
-        const data = JSON.parse(localStorage.getItem("student"))
+        // const data = JSON.parse(localStorage.getItem("student"))
         // if (data.gender === true ) {
         //     data.gender = 'L'
         // } else {
