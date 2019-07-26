@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/student_header.css';
-import Logo from '../images/does-logo.png';
-import ProfileIcon from '../images/man.png'
+import '../../styles/student/student_header.css';
+import Logo from '../../images/does-logo.png';
+import ProfileIcon from '../../images/man.png'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/student_upload.css'
+import '../../styles/student/student_upload.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import HeaderStudent from '../components/student_header';
+import HeaderStudent from '../../components/student/student_header';
 import axios from 'axios';
 import { withRouter, Redirect } from 'react-router-dom'
 import { Button } from 'react-bootstrap';

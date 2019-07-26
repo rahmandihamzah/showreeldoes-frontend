@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/profile_student.css';
+import '../../styles/student/profile_student.css';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 
-import Profile2 from '../images/man.png'
-import StudentHeader from '../components/student_header'
-import ProfileHead from '../components/profile_head';
+import Profile2 from '../../images/man.png'
+import StudentHeader from '../../components/student/student_header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class StudentProfile extends Component {
@@ -21,7 +20,6 @@ class StudentProfile extends Component {
         this.setState({
             edit: true
         })
-        // console.log("pencet")
     }
 
     render() {
