@@ -23,9 +23,9 @@ import ShowreelDetail from './pages/showreelDetail';
 
 // student
 import Login from './pages/login';
-import ProfileStudent from './pages/profile_student';
-import StudentUpload from './pages/student_upload';
-import StudentUploadDetail from './pages/student_upload_detail';
+import ProfileStudent from '../src/pages/student/profile_student';
+import StudentUpload from '../src/pages/student/student_upload';
+import StudentUploadDetail from '../src/pages/student/student_upload_detail';
 
 // admin
 
@@ -50,7 +50,7 @@ function App() {
 
         {/* student */}
         <Route exact path="/student" component={Login} />
-        <Route exact path="/student/upload/:id" component={StudentUpload} />
+        <Route exact path="/student/upload" component={StudentUpload} />
         <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/student/profile" component={ProfileStudent} />
     

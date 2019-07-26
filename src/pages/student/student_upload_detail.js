@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import '../styles/student_upload_detail.css';
+import '../../styles/student/student_upload_detail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ImagePlaceholder from '../images/1280x720.png'
+import ImagePlaceholder from '../../images/1280x720.png'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
 
 
-import HeaderStudent from '../components/student_header';
+import HeaderStudent from '../../components/student/student_header';
 
 class StudentUploadDetail extends Component {
 
