@@ -13,6 +13,7 @@ class StudentHeader extends Component {
         this.toggle = this.toggle.bind(this)
         this.state = {
             dropdownOpen: false,
+            student : {}
             
         }
     }
@@ -23,8 +24,8 @@ class StudentHeader extends Component {
     };
     componentDidMount() {
         axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id).then(res => {
-            console.log('header', res)
-            // this.setState({ student: res.data.student })
+            console.log('header data', res)
+            this.setState({ student: res.data.student })
         })
     }
 
@@ -37,7 +38,10 @@ class StudentHeader extends Component {
             }
         })
     }
-
+    
+    linkPage() {
+        this.props.history.push('/student/profile/' + localStorage.getItem('idStudent'))
+    }
 
     render() {
         // const data = JSON.parse(localStorage.getItem("student"));
@@ -53,14 +57,14 @@ class StudentHeader extends Component {
                         </li>
                     </ul>
                     <ul className="right-nav d-flex p-0 mr-lg-4">
-                        <p className="align-self-center my-lg-0 mr-lg-3 m-0"> Hai, I am student</p>
+                        <p className="align-self-center my-lg-0 mr-lg-3 m-0"> {this.state.student.full_name}</p>
                         <li className="mr-2">
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="shadow">
                                 <DropdownToggle className="togle-button">
                                     <img className="profile-icon" src={ProfileIcon} />
                                 </DropdownToggle>
                                 <DropdownMenu right className="m-0">
-                                    <DropdownItem onClick={() => this.linkPage('profile')}>Profile</DropdownItem>
+                                    <DropdownItem onClick={() => this.linkPage()}>Profile</DropdownItem>
                                     <DropdownItem divider />
                                     <DropdownItem onClick={() => this.signout()}>
                                         <FontAwesomeIcon icon="sign-out-alt" className="text-danger mr-2" />Sign Out
