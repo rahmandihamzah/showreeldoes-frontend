@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles/student/profile_student.css';
 import { Button, Form, Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 import Profile2 from '../../images/man.png'
 import StudentHeader from '../../components/student/student_header';
@@ -12,7 +13,8 @@ class StudentProfile extends Component {
         super()
         this.state = {
             edit: false,
-            hide: true
+            hide: true,
+            dataStudent : {}
         }
 
     }
@@ -21,6 +23,20 @@ class StudentProfile extends Component {
             edit: true
         })
     }
+
+    // Data
+    componentDidMount() {
+        console.log(this.props.match.params.id)
+        axios.get('http://192.168.2.11:5000/v1/student/' + 
+        this.props.match.params.id)
+        .then( res => {
+            this.setState({
+                dataStudent : res.data.student
+            })
+            console.log("data", res)
+        })
+    }
+
 
     render() {
         // const data = JSON.parse(localStorage.getItem("student"))
@@ -43,9 +59,9 @@ class StudentProfile extends Component {
                                         <i className="fas fa-user-circle fa-4x icon-user"></i>
                                     </div>
                                     <div onClick={() => this.linkToProfile('78678677896676')} className="name-dept d-flex flex-column justify-content-center">
-                                        <p className="m-0 pl-2 font-weight-bold"></p>
+                                        <p className="m-0 pl-2 font-weight-bold">{this.state.dataStudent.full_name}</p>
                                         <hr className="m-0 seperate-name-dept" />
-                                        <p className="m-0 pl-2"></p>
+                                        <p className="m-0 pl-2">{this.state.dataStudent.department}</p>
                                     </div>
                                 </div>
                             </li>
@@ -86,14 +102,14 @@ class StudentProfile extends Component {
                                     <p>sdfsdfs</p>
                                     <p>sdfsdfs</p>
                                     <br />
-                                    <p>sdfsdfs</p>
-                                    <p>sdfsdfs</p>
-                                    <p>sdfsdfsdf</p>
-                                    <p>sdfsdfsdfsdf</p>
+                                    <p>{this.state.dataStudent.full_name}</p>
+                                    <p>{this.state.dataStudent.department}</p>
+                                    <p>sdfds</p>
                                     <p>sdfsdfsdfsdfsdfsdfsdf</p>
-                                    <p>sdfsdfsdf</p>
-                                    <p>sdfsdfsdf</p>
-                                    <p>sdfsdfsdf</p>
+                                    <p>{this.state.dataStudent.birthday}</p>
+                                    <p>{this.state.dataStudent.email}</p>
+                                    <p>{this.state.dataStudent.address}</p>
+                                    <p>{this.state.dataStudent.phone}</p>
                                 </div>
                             </div>
                         </div>
