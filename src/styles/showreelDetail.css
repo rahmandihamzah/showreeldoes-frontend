@@ -13,6 +13,24 @@
     background-color: #fff;
     width: 80%;
     height: 90%;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+div>img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.show.thumnail {
+    max-width: 100%;
+    display: block;
 }
 
 .showreel-description {

@@ -12,7 +12,8 @@ class Footer extends Component {
                 <div className='footer-content d-block d-md-flex justify-content-around py-5'>
                     <div className=' form-logo d-flex align-items-center justify-content-center p-0 col px-md-5 mb-3 mb-md-0'>
                         <div className="col-6">
-                            <img className='footer-logo' src={require('../images/does-logo.png')} alt="logo-does" />
+                            {/* <img className='footer-logo' src={require('../images/does-logo.png')} alt="logo-does" /> */}
+                            <img src={require('../images/does-logo.png')} alt="logo-does" className="footer-logo" />
                         </div>
                     </div>
                     {/* <div className='verticalLine'></div> */}
