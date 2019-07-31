@@ -38,12 +38,14 @@
 }
 
 .showreel-container {
+    background-color: rgba(232, 241, 241, 0.787);
+
     /* display: grid;
     grid-template-columns: auto auto auto auto auto; */
     /* border: 1px solid black; */
     list-style: none;
     padding: 0;
-    width: auto;
+    width: 100%;
     /* display: flex;
     flex-wrap: wrap; */
     /* display: flex; */
@@ -70,8 +72,18 @@
     border: 1px solid #dedede;
     width: 96%;
     height: 90%;
-    display: flex;
-    align-items: center;
+    position: relative;
+    display: inline-block;
+}
+
+div>img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
 }
 
 .showreel-thumbnail:hover {
