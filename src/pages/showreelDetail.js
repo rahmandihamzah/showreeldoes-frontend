@@ -34,6 +34,7 @@ class ShowreelDetail extends Component {
                 console.log(this.state.showreelById)
                 console.log(this.state.dataStudent.full_name)
                 console.log(this.state.dataStudent.department)
+                console.log(this.state.dataStudent.profile_pic)
             })
     }
 
@@ -54,9 +55,12 @@ class ShowreelDetail extends Component {
                         <ul className="student-list-container row p-0">
                             <li className="student-list-frame m-2 mb-4" onClick={() => this.linkToProfile(this.state.showreelById.id_student._id)}>
                                 <div className="student-detail-space d-flex align-items-center">
-                                    <div className="profile-pic position-relative">
-                                        {/* <img src={this.state.showreelById.fileUpload} alt="" /> */}
-                                        <i className="fas fa-user-circle fa-4x icon-user"></i>
+                                    <div className="profile-pic-atshowreeldetail position-relative">
+                                        {this.state.dataStudent.profile_pic != null ?
+                                            <img src={this.state.dataStudent.profile_pic} alt="" />
+                                            :
+                                            <i className="fas fa-poo fa-3x icon-user"></i>
+                                        }
                                     </div>
                                     <div className="name-dept d-flex flex-column justify-content-center">
                                         <p className="m-0 pl-2 font-weight-bold">{this.state.dataStudent.full_name}</p>

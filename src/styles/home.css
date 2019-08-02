@@ -76,7 +76,7 @@
     display: inline-block;
 }
 
-div>img {
+.showreel-thumbnail>.img-thumbnail {
     display: block;
     position: absolute;
     top: 50%;

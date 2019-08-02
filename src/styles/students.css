@@ -38,9 +38,10 @@
     list-style: none;
 }
 
-.profile-pic {
+.profile-pic-atlist {
     background-color: #000;
-    width: 112px;
+    color: black;
+    width: 105px;
     height: 80px;
     left: 15px;
     overflow: hidden;
@@ -59,7 +60,7 @@
 }
 
 .icon-user {
-    color: #ffffff
+    color: #ffffff;
 }
 
 .name-dept {

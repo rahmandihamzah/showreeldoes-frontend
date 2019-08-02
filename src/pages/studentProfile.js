@@ -46,9 +46,12 @@ class StudentProfile extends Component {
                 <ul className="student-list-container col-11 col-md-6 col-lg-4 col-xl-3 mx-auto justify-content-center">
                     <li className="student-list-frame m-2 mb-4">
                         <div className="student-detail-space d-flex align-items-center">
-                            <div className="profile-pic position-relative">
-                                {/* <img src={DummyPicture} alt="" /> */}
-                                <i className="fas fa-user-circle fa-4x icon-user"></i>
+                            <div className="profile-pic-atprofile position-relative">
+                                {this.state.studentById.profile_pic != null ?
+                                    <img src={this.state.studentById.profile_pic} alt="" />
+                                    :
+                                    <i className="fas fa-poo fa-3x icon-user"></i>
+                                }
                             </div>
                             <div className="name-dept d-flex flex-column justify-content-center">
                                 <p className="m-0 pl-2 font-weight-bold">{this.state.studentById.full_name}</p>

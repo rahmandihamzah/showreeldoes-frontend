@@ -109,9 +109,12 @@ class Students extends Component {
                                                 {res.department == "programmer" ?
                                                     <div className="student-list-frame mb-4 col-12">
                                                         <div className="student-detail-space d-flex align-items-center">
-                                                            <div className="profile-pic position-relative">
-                                                                {/* <img src={require('')} alt=""/> */}
-                                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                                            <div className="profile-pic-atlist position-relative">
+                                                                {res.profile_pic != null ?
+                                                                    <img src={res.profile_pic} alt="" />
+                                                                    :
+                                                                    <i className="fas fa-poo fa-2x icon-user"></i>
+                                                                }
                                                             </div>
                                                             <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile(res._id)}>
                                                                 <p className="m-0 pl-2 font-weight-bold">{res.full_name}</p>
@@ -147,9 +150,12 @@ class Students extends Component {
                                                 {res.department == "programmer" ?
                                                     <div className="student-list-frame mb-4 col-12">
                                                         <div className="student-detail-space d-flex align-items-center">
-                                                            <div className="profile-pic position-relative">
-                                                                {/* <img src={require('')} alt=""/> */}
-                                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                                            <div className="profile-pic-atlist position-relative">
+                                                                {res.profile_pic != null ?
+                                                                    <img src={res.profile_pic} alt="" />
+                                                                    :
+                                                                    <i className="fas fa-poo fa-2x icon-user"></i>
+                                                                }
                                                             </div>
                                                             <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile(res._id)}>
                                                                 <p className="m-0 pl-2 font-weight-bold">{res.full_name}</p>
@@ -184,9 +190,12 @@ class Students extends Component {
                                                 {res.department == "programmer" ?
                                                     <div className="student-list-frame mb-4 col-12">
                                                         <div className="student-detail-space d-flex align-items-center">
-                                                            <div className="profile-pic position-relative">
-                                                                {/* <img src={require('')} alt=""/> */}
-                                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                                            <div className="profile-pic-atlist position-relative">
+                                                                {res.profile_pic != null ?
+                                                                    <img src={res.profile_pic} alt="" />
+                                                                    :
+                                                                    <i className="fas fa-poo fa-2x icon-user"></i>
+                                                                }
                                                             </div>
                                                             <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile(res._id)}>
                                                                 <p className="m-0 pl-2 font-weight-bold">{res.full_name}</p>
@@ -221,9 +230,12 @@ class Students extends Component {
                                                 {res.department == "programmer" ?
                                                     <div className="student-list-frame mb-4 col-12">
                                                         <div className="student-detail-space d-flex align-items-center">
-                                                            <div className="profile-pic position-relative">
-                                                                {/* <img src={require('')} alt=""/> */}
-                                                                {/* <i className="fas fa-user-circle fa-4x position-absolute pic-absolute"></i> */}
+                                                            <div className="profile-pic-atlist position-relative">
+                                                                {res.profile_pic != null ?
+                                                                    <img src={res.profile_pic} alt="" />
+                                                                    :
+                                                                    <i className="fas fa-poo fa-2x icon-user"></i>
+                                                                }
                                                             </div>
                                                             <div className="name-dept d-flex flex-column justify-content-center" onClick={() => this.linkToProfile(res._id)}>
                                                                 <p className="m-0 pl-2 font-weight-bold">{res.full_name}</p>

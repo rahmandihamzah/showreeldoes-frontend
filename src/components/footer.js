@@ -9,15 +9,14 @@ class Footer extends Component {
     render() {
         return (
             <div className='footer-container'>
-                <div className='footer-content d-block d-md-flex justify-content-around py-5'>
-                    <div className=' form-logo d-flex align-items-center justify-content-center p-0 col px-md-5 mb-3 mb-md-0'>
-                        <div className="col-6">
-                            {/* <img className='footer-logo' src={require('../images/does-logo.png')} alt="logo-does" /> */}
-                            <img src={require('../images/does-logo.png')} alt="logo-does" className="footer-logo" />
-                        </div>
+                <div className='footer-content d-flex flex-column flex-md-row justify-content-around py-5'>
+                    <div className='form-logo col-12 col-md-3 d-flex align-items-center justify-content-center p-0 px-md-5 mb-3 mb-md-0'>
+                        {/* <div className="col-6"> */}
+                        <img src={require('../images/does-logo.png')} alt="logo-does" className="footer-logo" />
+                        {/* </div> */}
                     </div>
                     {/* <div className='verticalLine'></div> */}
-                    <div className='contact-us col px-0 px-md-5 p-0 mb-3 mb-md-0'>
+                    <div className='contact-us px-0 px-md-5 p-0 mb-3 mb-md-0'>
                         <div className='contact-us-title'>
                             <p className='m-0 text-center'>Contact Us</p>
                         </div>
