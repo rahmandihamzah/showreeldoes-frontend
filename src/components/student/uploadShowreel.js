@@ -4,12 +4,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImagePlaceholder from '../../images/1280x720.png'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
-import config from '../../config'
+import config from '../../config';
 
 
-import HeaderStudent from '../../components/student/student_header';
+// import HeaderStudent from '../../components/student/student_header';
 
-class StudentUploadDetail extends Component {
+class UploadShowreel extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            file: null,
+        }
+    }
+
+    chooseFile() {
+        this.refs.upload.click()
+    }
+    preview(e) {
+        if (e.target.files[0]) {
+            this.setState({
+                file: URL.createObjectURL(e.target.files[0]),
+                uploadCancel: true
+            })
+            this.refs.iconUpload.style.display = "none"
+        }
+    }
 
 
     // componentDidMount() {
@@ -29,14 +49,24 @@ class StudentUploadDetail extends Component {
     render() {
         return (
             <div>
-                <HeaderStudent />
                 {/* File Preview*/}
                 <div className="wrap-preview justify-content-center p-lg-5 p-0 ">
-                    <div className="preview">
-                        <div className="d-flex justify-content-center image-placeholder  col-lg-10 col-12 mx-auto p-0 h-100">
-                            <img className="" src={ImagePlaceholder} />
+                    <div className="text-center">
+                        <input type="file" className="d-none" ref="upload" onChange={this.preview.bind(this)} />
+                        <div ref="iconUpload">
+                            <FontAwesomeIcon icon="cloud-upload-alt" color="grey" className="fas fa-7x" onClick={() => this.chooseFile()} />
                         </div>
+                        {this.state.uploadCancel === true ?
+                            <div className="wrapper-image ">
+                                <img src={this.state.file}  className="file-preview" />
+                                <div className="hover-button d-flex justify-content-center align-items-center">
+                                    <button className="btn-change p-3 col-lg-5 col-12 rounded-pill " onClick={() => this.chooseFile()}><FontAwesomeIcon icon="file-image" className="mr-3 fas fa-1x"  />Change</button>
+                                </div>
+
+                            </div>
+                            : null}
                     </div>
+
                 </div>
                 {/* File Preview */}
                 {/* Upload Detail */}
@@ -59,8 +89,9 @@ class StudentUploadDetail extends Component {
                     </div>
                 </div>
                 {/* Upload Detail */}
+
             </div>
         )
     }
 }
-export default StudentUploadDetail;
+export default UploadShowreel;

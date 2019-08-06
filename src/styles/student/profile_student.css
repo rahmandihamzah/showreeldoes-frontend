@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -20,4 +21,20 @@
 }
 .wrap-content {
     margin-top: 5rem;
+}
+.password_input {
+    text-transform: none;
+}
+
+.password_show {
+    cursor: pointer;
+    /* position: absolute; */
+    background: #72727272;
+    font-weight: 400;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }

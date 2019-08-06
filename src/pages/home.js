@@ -56,8 +56,7 @@ class Home extends Component {
                     {/* <div className='container'> */}
                     {/* <Container> */}
                     <ul className='showreel-container row mx-3 justify-content-start row'>
-
-                        {this.state.showreels.map((res, i) => {
+                    {this.state.showreels.map((res, i) => {
                             return (
                                 <li className='col-6 col-md-4 col-lg-2 px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
                                     <div className='showreel-frame'>

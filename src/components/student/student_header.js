@@ -6,6 +6,7 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
+import {config} from '../../config'
 
 class StudentHeader extends Component {
     constructor(props) {
@@ -23,14 +24,15 @@ class StudentHeader extends Component {
         }))
     };
     componentDidMount() {
-        axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id).then(res => {
-            console.log('header data', res)
+        console.log(this.props.match.params.id, 'sadasdsad')
+        axios.get( config.baseurl + 'student/' + this.props.match.params.id).then(res => {
+            console.log('header data', res.data)
             this.setState({ student: res.data.student })
         })
     }
 
     signout() {
-        axios.get('http://192.168.2.12:5000/v1/logout').then(res => {
+        axios.get( config.baseurl + 'logout').then(res => {
             console.log(res)
             if (res.data.login === false) {
                 localStorage.removeItem('tokenlogin')
@@ -57,7 +59,7 @@ class StudentHeader extends Component {
                         </li>
                     </ul>
                     <ul className="right-nav d-flex p-0 mr-lg-4">
-                        <p className="align-self-center my-lg-0 mr-lg-3 m-0"> {this.state.student.full_name}</p>
+                        <p className="align-self-center my-lg-0 mr-lg-3 m-0 text-capitalize" >{this.state.student.full_name}</p>
                         <li className="mr-2">
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="shadow">
                                 <DropdownToggle className="togle-button">
@@ -76,6 +78,7 @@ class StudentHeader extends Component {
                 </div>
                 {/* NAVBAR */}
             </div>
+            
         )
     }
 }
