@@ -2,13 +2,36 @@ import React, { Component } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import '../styles/studentProfile.css';
+import axios from 'axios';
+import Moment from 'react-moment';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class StudentProfile extends Component {
 
+    constructor() {
+        super()
+        this.state = {
+            studentById: [],
+            studentShowreel: []
+        }
+    }
+
     linkToShowreelDetail(e) {
         console.log(e)
         this.props.history.push('/showreelDetail/' + e)
+    }
+
+    componentDidMount() {
+        axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id)
+            .then((response) => {
+                console.log(response.data.student)
+                this.setState({
+                    studentById: response.data.student,
+                    studentShowreel: response.data.student.showreels
+                })
+                // console.log(this.state.studentById)
+                console.log(this.state.studentShowreel)
+            })
     }
 
     render() {
@@ -23,14 +46,17 @@ class StudentProfile extends Component {
                 <ul className="student-list-container col-11 col-md-6 col-lg-4 col-xl-3 mx-auto justify-content-center">
                     <li className="student-list-frame m-2 mb-4">
                         <div className="student-detail-space d-flex align-items-center">
-                            <div className="profile-pic position-relative">
-                                {/* <img src={DummyPicture} alt="" /> */}
-                                <i className="fas fa-user-circle fa-4x icon-user"></i>
+                            <div className="profile-pic-atprofile position-relative">
+                                {this.state.studentById.profile_pic != null ?
+                                    <img src={this.state.studentById.profile_pic} alt="" />
+                                    :
+                                    <i className="fas fa-poo fa-3x icon-user"></i>
+                                }
                             </div>
                             <div className="name-dept d-flex flex-column justify-content-center">
-                                <p className="m-0 pl-2 font-weight-bold">Lorem Ipsum</p>
+                                <p className="m-0 pl-2 font-weight-bold">{this.state.studentById.full_name}</p>
                                 <hr className="m-0 seperate-name-dept" />
-                                <p className="m-0 pl-2">3D Modeler</p>
+                                <p className="m-0 pl-2">{this.state.studentById.department}</p>
                             </div>
                         </div>
                     </li>
@@ -41,287 +67,92 @@ class StudentProfile extends Component {
                             <tr>
                                 <td>Full Name</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">Lorem Ipsum</td>
+                                <td className="font-weight-bold">{this.state.studentById.full_name}</td>
                             </tr>
                             <tr>
                                 <td>Department</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">Lorem Ipsum</td>
+                                <td className="font-weight-bold">{this.state.studentById.department}</td>
                             </tr>
                             <tr>
                                 <td>Status</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">Student / Graduated</td>
+                                {this.state.studentById.status == true ?
+                                    <td className="font-weight-bold">
+                                        Student
+                                    </td>
+                                    :
+                                    <td className="font-weight-bold">
+                                        Graduated
+                                    </td>
+                                }
+
                             </tr>
                             <tr >
                                 <td>Gender</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">Male / Female</td>
+                                {this.state.studentById.gender == true ?
+                                    <td className="font-weight-bold">
+                                        Male
+                                </td>
+                                    :
+                                    <td className="font-weight-bold">
+                                        Female
+                                </td>
+                                }
                             </tr>
                             <tr>
                                 <td>Birthday</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">January 01, 1994</td>
+                                < td className="font-weight-bold student-bithday">
+                                    <Moment format="YYYY/MM/DD">
+                                        {this.state.studentById.birthday}
+                                    </Moment>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Email</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">loremipsum@gmail.com</td>
+                                <td className="font-weight-bold">{this.state.studentById.email}</td>
                             </tr>
                             <tr>
                                 <td>Address</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">Jl. Buah-buahan No. 3 Sleman, DIY</td>
+                                <td className="font-weight-bold">{this.state.studentById.address}</td>
                             </tr>
                             <tr>
                                 <td>Phone</td>
                                 <td>:</td>
-                                <td className="font-weight-bold">08123456789</td>
+                                <td className="font-weight-bold">{this.state.studentById.phone}</td>
                             </tr>
                         </tbody>
                     </table>
-
-                    {/* <div>
-                        <p>Full Name</p>
-                        <p>Department</p>
-                        <p>Status</p>
-                        <p>Gender</p>
-                        <p>Birthday</p>
-                        <p>Email</p>
-                        <p>Address</p>
-                        <p>Phone</p>
-                    </div>
-                    <div className="mx-4">
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                    </div>
-                    <div className="identity-content font-weight-bold overflow-auto">
-                        <p>Lorem Ipsum</p>
-                        <p>Lorem Ipsum</p>
-                        <p>Student / Graduated</p>
-                        <p>Male / Female</p>
-                        <p>January 01, 1994</p>
-                        <p>loremipsum@gmail.com</p>
-                        <p>Jl. Buah-buahan No. 3 Sleman, DIY</p>
-                        <p>08123456789</p>
-                    </div> */}
                 </div>
                 <div className="showreel-profile-list pb-5">
                     <ul className='showreel-container row mx-3 justify-content-start'>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
-                        <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail("showreel.id")}>
-                            <div className='showreel-frame'>
-                                <div className='showreel-thumbnail'>
-                                    <img src={require('../images/does-logo.png')} alt="" className="img-thumbnail" />
-                                </div>
-                                <div className='showreel-resp'>
-                                    {/* <ul>
-                                            <li></li>
-                                        </ul>
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul> */}
-                                </div>
-                            </div>
-                        </li>
+                        {/* {this.state.studentById.showreels.map((res, i) => {
+                            return (
+                            )
+                        })} */}
+
+                        {this.state.studentShowreel.map((res, i) => {
+                            return (
+                                <li className='showreel-space col-12 col-md-5 col-xl-2 my-2' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
+                                    <div className='showreel-frame'>
+                                        <div className='showreel-thumbnail'>
+                                            <img src={res.fileUpload} alt="" className="img-thumbnail" />
+                                        </div>
+                                        <div className='showreel-resp'>
+                                        </div>
+                                    </div>
+                                </li>
+                            )
+                        })}
+
                     </ul>
                 </div>
                 <Footer />
-            </div>
+            </div >
         )
     }
 }

@@ -20,7 +20,7 @@ class Home extends Component {
             .then((response) => {
                 console.log(response.data)
                 this.setState({
-                    showreels: response.data.showreel
+                    showreels: response.data.showreels
                 })
                 console.log(this.state.showreels)
             })
@@ -56,12 +56,12 @@ class Home extends Component {
                     {/* <div className='container'> */}
                     {/* <Container> */}
                     <ul className='showreel-container row mx-3 justify-content-start row'>
-                    {this.state.showreels.map((res, i) => {
+                        {this.state.showreels.map((res, i) => {
                             return (
                                 <li className='col-6 col-md-4 col-lg-2 px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
                                     <div className='showreel-frame'>
-                                        <div className='showreel-thumbnail'>
-                                            <img src={res.url} alt="" className="img-thumbnail" />
+                                        <div className='showreel-thumbnail d-flex justify-content-center'>
+                                            <img src={res.fileUpload} alt="" className="img-thumbnail" />
                                         </div>
                                         <div className='showreel-resp'>
                                             {/* <ul>
@@ -75,7 +75,7 @@ class Home extends Component {
                                         </div>
                                     </div>
                                     <div className='creator'>
-                                        creator
+                                        {res.id_student.full_name}
                                     </div>
                                 </li>
                             )

@@ -18,3 +18,19 @@
     justify-content: center;
     font-family: 'Barlow', sans-serif;
 }
+
+.profile-pic-atprofile {
+    background-color: #000;
+    color: #000000;
+    width: 112px;
+    height: 90px;
+    left: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-left-radius: 20%; */
+    /* border-bottom-left-radius: 50%; */
+}

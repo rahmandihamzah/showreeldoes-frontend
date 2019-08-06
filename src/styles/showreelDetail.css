@@ -13,6 +13,24 @@
     background-color: #fff;
     width: 80%;
     height: 90%;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.showreel-play-frame>.show-thumbnail {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.show.thumnail {
+    max-width: 100%;
+    display: block;
 }
 
 .showreel-description {
@@ -22,4 +40,20 @@
 
 .see-more {
     color: grey;
+}
+
+.profile-pic-atshowreeldetail {
+    background-color: #000;
+    color: #000000;
+    width: 112px;
+    height: 80px;
+    left: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-left-radius: 20%; */
+    /* border-bottom-left-radius: 50%; */
 }
