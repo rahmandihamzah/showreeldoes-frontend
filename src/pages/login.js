@@ -3,7 +3,7 @@ import '../styles/login.css';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios'
-
+import {config} from '../config'
 import Logo from '../images/does-logo.png';
 
 
@@ -21,7 +21,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        fetch('http://192.168.2.11:5000/v1/users')
+        fetch(config.baseurl + 'users')
             .then(blob => blob.json())
             .then(data => {
                 return data;
@@ -30,6 +30,7 @@ class Login extends Component {
                 console.log(e);
                 return e;
             });
+            console.log()
     }
 
 
@@ -47,13 +48,13 @@ class Login extends Component {
             password: this.state.password,
             username: this.state.username
         }
-        axios.post('http://192.168.2.11:5000/v1/login', data).then(res => {
+        axios.post( config.baseurl + 'login/' , data).then(res => {
             console.log(res.data)
-            localStorage.setItem('tokenlogin', res.data.update.token)
-            localStorage.setItem('idStudent', res.data.update.id_student)
-            this.props.history.push('/student/upload/' + res.data.update.id_student)
+            localStorage.setItem('tokenlogin', res.data.lastesUpdate.token)
+            localStorage.setItem('idStudent', res.data.lastesUpdate.id_student)
+            this.props.history.push('/student/upload/' + res.data.lastesUpdate.id_student._id)
         }).catch(error => {
-            console.log("error")
+            console.log("Bangsat error")
         })
         console.log(this.state.username)
         console.log(this.state.password)

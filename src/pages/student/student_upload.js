@@ -3,8 +3,10 @@ import '../../styles/student/student_upload.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeaderStudent from '../../components/student/student_header';
 import axios from 'axios';
-import { withRouter, Redirect } from 'react-router-dom'
-import { Button } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom'
+// import { Button } from 'react-bootstrap';
+import {config} from '../../config'
+import UploadShowreel from '../../components/student/uploadShowreel'
 
 
 class Upload extends Component {
@@ -36,8 +38,8 @@ class Upload extends Component {
         this.refs.upload.click()
     }
     componentDidMount() {
-        console.log('kj7ikik', localStorage.getItem('tokenlogin'))
-        axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id).then(res => {
+        // console.log('kj7ikik', localStorage.getItem('tokenlogin'))
+        axios.get( config.baseurl + 'student/' + this.props.match.params.id).then(res => {
             console.log('erroorrrrrr', res)
             this.setState({ student: res.data.student })
             localStorage.setItem('student', JSON.stringify(res.data.student))
@@ -48,9 +50,9 @@ class Upload extends Component {
         return (
             <div>
                 <HeaderStudent />
-                <h2 className="show-them-reel d-flex justify-content-center mb-lg-5 mb-0">Show them your reel!</h2>
+                <h3 className="show-them-reel d-flex justify-content-center mb-0 text-capitalize">Show them your reel!</h3>
                 {/* Upload File */}
-                <div className="file-upload">
+                {/* <div className="file-upload">
                     <div className="input-form ">
                         <input type="file" className="input-file" ref='upload' onChange={this.previewFile} />
                         <div ref="iconupload">
@@ -68,8 +70,9 @@ class Upload extends Component {
                         </div>
                     </div>
                     : null
-                }
+                } */}
                 {/* Upload File */}
+                <UploadShowreel />
             </div>
         )
     }

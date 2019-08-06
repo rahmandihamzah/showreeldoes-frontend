@@ -1,6 +1,6 @@
 .wrap-preview {
     background-color: #313131;
-    margin-top: 72px;
+    /* margin-top: 72px; */
     /* margin-top: 5rem; */
 }
 .preview {
@@ -23,6 +23,59 @@
 .form-detail input {
     /* width           : 30%; */
 }
-.upload-save {
+.file-upload {
+    padding         : 10px;
+    /* position        : absolute; */
+    top             : 50%;
+    left            : 50%;
+    /* transform       : translate(-50%, -50%); */
 
+}
+.hover-button {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 50%; 
+    transform: translate(-50%, -50%);
+}
+.wrapper-image {
+    background: black;
+}
+.wrapper-image:hover .btn-change {
+    visibility: visible;
+    opacity: 1;
+}
+.wrapper-image:hover .btn-upload {
+    visibility: visible;
+    opacity: 1;
+}
+.wrapper-image:hover .file-preview {
+    opacity: 0.4;
+}
+
+.btn-change {
+    visibility: hidden;
+    color: white;
+    font-weight: 300;
+    border: none;
+    opacity: 0;
+    background: #ffc107;
+    transition: visibility 0s, opacity.3s linear;
+}
+.btn-upload{
+    visibility: hidden;
+    opacity: 0;
+    font-weight: 300;
+    color: white;
+    background: #dc3545;
+    border: none;
+    transition: visibilty 0s , opacity.3s linear;
+}
+
+.btn-change:hover {
+    background: transparent;
+    border: 2px solid #ffc107;
+}
+.file-preview {
+    max-width: 100%;
 }

@@ -30,32 +30,32 @@
     opacity: 1;
     /* transition: all 1s ease; */
 }
-.wrapper-image:hover .btn-upload{
+.wrappers-image:hover .btn-upload{
     /* display: block; */
     visibility: visible;
     opacity: 1;
     /* transition: all 1s ease; */
 }
-.wrapper-image:hover .file-preview {
+.wrappers-image:hover .file-preview {
     opacity: 0.4;
 }
-.hover-button {
+.hovers-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
 }
-.btn-change {
+.btns-change {
     visibility: hidden;
     font-weight: 300;
     color: white;
-    background: #ffc107;
+    /* background: #ffc107; */
     border: none;
     opacity: 0;
     transition: visibility 0s , opacity.3s linear;
 }
-.btn-upload {
+.btns-upload {
     visibility: hidden;
     opacity: 0;
     font-weight: 300;
