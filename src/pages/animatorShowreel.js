@@ -43,7 +43,7 @@ class AnimatorShowreel extends Component {
                         {this.state.showreels.map((res, i) => {
                             return (
                                 <div className="col-6 col-md-4 col-lg-2" key={i}>
-                                    {res.id_student.department == "programmer" ?
+                                    {res.id_student.department == "animator" ?
                                         <div className='px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
                                             <div className='showreel-frame'>
                                                 <div className='showreel-thumbnail d-flex justify-content-center'>
