@@ -54,6 +54,16 @@
     /* border-bottom-left-radius: 50%; */
 }
 
+.profile-pic-atlist>.thepic {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
 .profile-pic img {
     width: 100%;
     align-self: center;

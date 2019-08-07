@@ -19,6 +19,7 @@ class Students extends Component {
     componentDidMount() {
         axios.get('http://192.168.2.11:5000/v1/students')
             .then((response) => {
+                console.log(response)
                 this.setState({
                     students: response.data.students
                 })
@@ -111,7 +112,7 @@ class Students extends Component {
                                                         <div className="student-detail-space d-flex align-items-center">
                                                             <div className="profile-pic-atlist position-relative">
                                                                 {res.profile_pic != null ?
-                                                                    <img src={res.profile_pic} alt="" />
+                                                                    <img className="thepic" src={res.profile_pic} alt="" />
                                                                     :
                                                                     <i className="fas fa-poo fa-2x icon-user"></i>
                                                                 }
@@ -147,12 +148,12 @@ class Students extends Component {
                                     {this.state.students.map((res, i) => {
                                         return (
                                             <div key={i}>
-                                                {res.department == "programmer" ?
+                                                {res.department == "animator" ?
                                                     <div className="student-list-frame mb-4 col-12">
                                                         <div className="student-detail-space d-flex align-items-center">
                                                             <div className="profile-pic-atlist position-relative">
                                                                 {res.profile_pic != null ?
-                                                                    <img src={res.profile_pic} alt="" />
+                                                                    <img className="thepic" src={res.profile_pic} alt="" />
                                                                     :
                                                                     <i className="fas fa-poo fa-2x icon-user"></i>
                                                                 }
@@ -192,7 +193,7 @@ class Students extends Component {
                                                         <div className="student-detail-space d-flex align-items-center">
                                                             <div className="profile-pic-atlist position-relative">
                                                                 {res.profile_pic != null ?
-                                                                    <img src={res.profile_pic} alt="" />
+                                                                    <img className="thepic" src={res.profile_pic} alt="" />
                                                                     :
                                                                     <i className="fas fa-poo fa-2x icon-user"></i>
                                                                 }
@@ -232,7 +233,7 @@ class Students extends Component {
                                                         <div className="student-detail-space d-flex align-items-center">
                                                             <div className="profile-pic-atlist position-relative">
                                                                 {res.profile_pic != null ?
-                                                                    <img src={res.profile_pic} alt="" />
+                                                                    <img className="thepic" src={res.profile_pic} alt="" />
                                                                     :
                                                                     <i className="fas fa-poo fa-2x icon-user"></i>
                                                                 }

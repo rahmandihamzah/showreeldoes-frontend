@@ -3,6 +3,7 @@
 }
 
 .showreel-play-container {
+    /* border: 1px solid black; */
     background-image: linear-gradient(to right, #000000, #000000, #020607, #020506, #000000, #050d0e, #050d0f, #071214, #09191b, #13363c);
     width: 100%;
     height: 75vh;
@@ -10,8 +11,8 @@
 
 .showreel-play-frame {
     border: 1px solid black;
-    background-color: #fff;
-    width: 80%;
+    background-color: #ffffff;
+    width: 100%;
     height: 90%;
     position: relative;
     display: inline-block;
@@ -26,6 +27,16 @@
     max-height: 100%;
     max-width: 100%;
     transform: translate(-50%, -50%);
+}
+
+.showreel-play-frame>.video-player {
+    display: block !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    transform: translate(-50%, -50%) !important;
 }
 
 .show.thumnail {
@@ -57,3 +68,15 @@
     /* border-top-left-radius: 20%; */
     /* border-bottom-left-radius: 50%; */
 }
+
+.profile-pic-atshowreeldetail>.thepic {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/* @import 'video-react/styles/scss/video-react'; */

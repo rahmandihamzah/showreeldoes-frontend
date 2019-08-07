@@ -5,6 +5,8 @@ import '../styles/showreelDetail.css';
 import axios from 'axios';
 import Collapse from 'react-bootstrap/Collapse';
 import Truncate from 'react-truncate';
+import { Player } from 'video-react';
+import '../../node_modules/video-react/dist/video-react.css'
 
 class ShowreelDetail extends Component {
 
@@ -26,7 +28,7 @@ class ShowreelDetail extends Component {
         console.log(this.props.match.params.id)
         axios.get('http://192.168.2.11:5000/v1/showreel/' + this.props.match.params.id)
             .then((response) => {
-                console.log(response.data.results)
+                console.log(response)
                 this.setState({
                     showreelById: response.data.results,
                     dataStudent: response.data.results.id_student
@@ -44,8 +46,11 @@ class ShowreelDetail extends Component {
                 <Header />
                 <div>
                     <div className="showreel-play-container d-flex justify-content-center align-items-center">
-                        <div className="showreel-play-frame d-flex justify-content-center">
+                        <div className="showreel-play-frame d-flex justify-content-center col-12 col-md-7">
                             <img src={this.state.showreelById.fileUpload} alt="" className="show-thumbnail" />
+                            {/* <Player className="video-player">
+                                <source src="http://res.cloudinary.com/damaxkeot/video/upload/v1565057231/kekxrmbmdysbhm7bz34u.mp4" />
+                            </Player> */}
                         </div>
                     </div>
                     <div className="col">
@@ -57,7 +62,7 @@ class ShowreelDetail extends Component {
                                 <div className="student-detail-space d-flex align-items-center">
                                     <div className="profile-pic-atshowreeldetail position-relative">
                                         {this.state.dataStudent.profile_pic != null ?
-                                            <img src={this.state.dataStudent.profile_pic} alt="" />
+                                            <img className="thepic" src={this.state.dataStudent.profile_pic} alt="" />
                                             :
                                             <i className="fas fa-poo fa-3x icon-user"></i>
                                         }
@@ -71,15 +76,15 @@ class ShowreelDetail extends Component {
                             </li>
                         </ul>
                         <div className="showreel-description">
-                            <p>{this.state.showreelById.description}</p>
-                            {/* <a onClick={() => this.setState({ showText: !this.state.showText })}>See more</a>
+                            <a onClick={() => this.setState({ showText: !this.state.showText })}>See more</a>
                             <Collapse in={this.state.showText}>
                                 <div>
                                     <span>
-                                        some more texts here...
+                                        {/* some more texts here... */}
+                                        <p>{this.state.showreelById.description}</p>
                                     </span>
                                 </div>
-                            </Collapse> */}
+                            </Collapse>
 
                             <Truncate lines={3} ellipsis={
                                 <span>

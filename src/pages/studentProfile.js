@@ -24,12 +24,12 @@ class StudentProfile extends Component {
     componentDidMount() {
         axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id)
             .then((response) => {
-                console.log(response.data.student)
+                console.log(response)
                 this.setState({
                     studentById: response.data.student,
                     studentShowreel: response.data.student.showreels
                 })
-                // console.log(this.state.studentById)
+                console.log(this.state.studentById)
                 console.log(this.state.studentShowreel)
             })
     }
@@ -48,7 +48,7 @@ class StudentProfile extends Component {
                         <div className="student-detail-space d-flex align-items-center">
                             <div className="profile-pic-atprofile position-relative">
                                 {this.state.studentById.profile_pic != null ?
-                                    <img src={this.state.studentById.profile_pic} alt="" />
+                                    <img className="thepic" src={this.state.studentById.profile_pic} alt="" />
                                     :
                                     <i className="fas fa-poo fa-3x icon-user"></i>
                                 }
