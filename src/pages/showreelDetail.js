@@ -10,12 +10,13 @@ import '../../node_modules/video-react/dist/video-react.css'
 
 class ShowreelDetail extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             showreelById: [],
             dataStudent: {},
-            showText: false
+            showText: false,
+            showreelType: Boolean
         };
     }
 
@@ -28,15 +29,17 @@ class ShowreelDetail extends Component {
         console.log(this.props.match.params.id)
         axios.get('http://192.168.2.11:5000/v1/showreel/' + this.props.match.params.id)
             .then((response) => {
-                console.log(response)
+                console.log(response.data.results.fileUpload.includes("video"))
+
                 this.setState({
                     showreelById: response.data.results,
-                    dataStudent: response.data.results.id_student
+                    dataStudent: response.data.results.id_student,
+                    showreelType: response.data.results.fileUpload.includes("images")
                 })
+
                 console.log(this.state.showreelById)
-                console.log(this.state.dataStudent.full_name)
-                console.log(this.state.dataStudent.department)
-                console.log(this.state.dataStudent.profile_pic)
+                console.log(this.state.showreelType)
+                console.log(this.state.dataStudent)
             })
     }
 
@@ -47,10 +50,13 @@ class ShowreelDetail extends Component {
                 <div>
                     <div className="showreel-play-container d-flex justify-content-center align-items-center">
                         <div className="showreel-play-frame d-flex justify-content-center col-12 col-md-7">
-                            <img src={this.state.showreelById.fileUpload} alt="" className="show-thumbnail" />
-                            {/* <Player className="video-player">
-                                <source src="http://res.cloudinary.com/damaxkeot/video/upload/v1565057231/kekxrmbmdysbhm7bz34u.mp4" />
-                            </Player> */}
+                            {this.state.showreelType == true ?
+                                <img src={this.state.showreelById.fileUpload} alt="" className="show-thumbnail" />
+                                :
+                                <Player className="video-player">
+                                    <source src="http://res.cloudinary.com/damaxkeot/video/upload/v1565057231/kekxrmbmdysbhm7bz34u.mp4" />
+                                </Player>
+                            }
                         </div>
                     </div>
                     <div className="col">

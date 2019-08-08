@@ -47,7 +47,11 @@ class ProgrammerShowreel extends Component {
                                         <div className='px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
                                             <div className='showreel-frame'>
                                                 <div className='showreel-thumbnail d-flex justify-content-center'>
-                                                    <img src={res.fileUpload} alt="" className="img-thumbnail" />
+                                                    {res.fileUpload.includes("image") == true ?
+                                                        <img src={res.fileUpload} alt="" className="img-thumbnail" />
+                                                        :
+                                                        <video src={res.fileUpload} className="video-thumbnail"></video>
+                                                    }
                                                 </div>
                                                 <div className='showreel-resp'>
                                                     {/* <ul>
