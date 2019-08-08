@@ -12,6 +12,7 @@ class Home extends Component {
         super();
         this.state = {
             showreels: [],
+            showreelType: Boolean
         }
     }
 
@@ -20,9 +21,11 @@ class Home extends Component {
             .then((response) => {
                 console.log(response.data)
                 this.setState({
-                    showreels: response.data.showreels
+                    showreels: response.data.showreels,
+                    // showreelType: response.date.showreels.fileUpload.includes("image")
                 })
                 console.log(this.state.showreels)
+                // console.log(this.state.showreelType)
             })
     }
 
@@ -61,7 +64,11 @@ class Home extends Component {
                                 <li className='col-6 col-md-4 col-lg-2 px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
                                     <div className='showreel-frame'>
                                         <div className='showreel-thumbnail d-flex justify-content-center'>
-                                            <img src={res.fileUpload} alt="" className="img-thumbnail" />
+                                            {res.fileUpload.includes("image") == true ?
+                                                <img src={res.fileUpload} alt="" className="img-thumbnail" />
+                                                :
+                                                <video className="video-thumbnail" src={res.fileUpload}></video>
+                                            }
                                         </div>
                                         <div className='showreel-resp'>
                                             {/* <ul>
