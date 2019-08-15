@@ -23,7 +23,7 @@ class StudentProfile extends Component {
             eye: 'eye-slash',
             startDate: new Date(),
             date: '',
-            render: false,
+            gender: false,
             username: '',
             password: '',
             full_name: '',
@@ -42,9 +42,9 @@ class StudentProfile extends Component {
         // console.log(this.props.match.params.id)
     }
     getData() {
-        axios.get('http://192.168.2.11:5000/v1/student/' +
-            this.props.match.params.id)
+        axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id)
             .then(res => {
+                console.log(res.data)
                 this.dataStudent(res.data.student)
                 this.setDate(res.data.student.birthday)
                 this.setState({ render: true })

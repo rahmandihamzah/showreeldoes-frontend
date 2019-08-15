@@ -1,5 +1,6 @@
 .wrap-preview {
     background-color: #313131;
+    min-height: 300px ;
     /* margin-top: 72px; */
     /* margin-top: 5rem; */
 }
@@ -33,13 +34,14 @@
 }
 .hover-button {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     width: 50%; 
     transform: translate(-50%, -50%);
+    -webkit-transform: translateX(-50%);
 }
 .wrapper-image {
-    background: black;
+    background: red;
 }
 .wrapper-image:hover .btn-change {
     visibility: visible;
