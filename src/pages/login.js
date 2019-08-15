@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import '../styles/login.css';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import {
+        Form,
+        FormGroup,
+        Label,
+        Input,
+        Button }
+    from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios'
 import {config} from '../config'
@@ -22,15 +28,15 @@ class Login extends Component {
 
     componentDidMount() {
         fetch(config.baseurl + 'users')
-            .then(blob => blob.json())
+            .then(data => data.json())
             .then(data => {
                 return data;
             })
             .catch(e => {
-                console.log(e);
+                // console.log(e);
                 return e;
             });
-            console.log()
+            // console.log()
     }
 
 
@@ -54,10 +60,10 @@ class Login extends Component {
             localStorage.setItem('idStudent', res.data.lastesUpdate.id_student)
             this.props.history.push('/student/upload/' + res.data.lastesUpdate.id_student._id)
         }).catch(error => {
-            console.log("Bangsat error")
+            // console.log("Bangsat error")
         })
-        console.log(this.state.username)
-        console.log(this.state.password)
+        // console.log(this.state.username)
+        // console.log(this.state.password)
     }
 
 
