@@ -213,7 +213,7 @@ class StudentProfile extends Component {
                                             <div className="image-edit col-lg-3 text-center m-0 p-0">
 
                                                 {/* Mengganti Profile Image */}
-                                                <img src={Profile2} />
+                                                <img src={Profile2} alt="" />
                                                 <label>Click to browse</label>
                                             </div>
                                             <div className="form-edit col-lg-9">

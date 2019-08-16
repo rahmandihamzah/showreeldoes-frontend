@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/header.css';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 // import { PrismCode } from 'react-prism';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

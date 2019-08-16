@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/App.css';
-import { BrowserRouter as Router, Route, Link, Redirect, HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons'
@@ -25,7 +25,6 @@ import ShowreelDetail from './pages/showreelDetail';
 import Login from './pages/login';
 import ProfileStudent from '../src/pages/student/profile_student';
 import StudentUpload from '../src/pages/student/student_upload';
-import StudentUploadDetail from '../src/pages/student/student_upload_detail';
 
 // admin
 
@@ -51,7 +50,6 @@ function App() {
         {/* student */}
         <Route exact path="/student" component={Login} />
         <Route exact path="/student/upload/:id" component={StudentUpload} />
-        <Route exact path="/student/upload-detail" component={StudentUploadDetail} />
         <Route exact path="/student/profile/:id" component={ProfileStudent} />
     
         {/* admin */}
