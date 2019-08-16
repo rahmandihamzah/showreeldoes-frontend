@@ -7,7 +7,6 @@ import {
         Input,
         Button }
     from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios'
 import {config} from '../config'
 import Logo from '../images/does-logo.png';
@@ -22,10 +21,10 @@ class Login extends Component {
             data        : null, 
             username    : '',
             password    : '',
-        }
-        
+        };
     }
 
+    // Get data
     componentDidMount() {
         fetch(config.baseurl + 'users')
             .then(data => data.json())
@@ -38,8 +37,7 @@ class Login extends Component {
             });
             // console.log()
     }
-
-
+    // Form Value
     username(u) {
         this.setState({ username: u.target.value })
         // console.log(u.target.value)
@@ -48,7 +46,8 @@ class Login extends Component {
         this.setState({ password: p.target.value })
         // console.log(p.target.value)
     }
-
+    // Data Send
+    
     send() {
         let data = {
             password: this.state.password,
@@ -62,8 +61,6 @@ class Login extends Component {
         }).catch(error => {
             // console.log("Bangsat error")
         })
-        // console.log(this.state.username)
-        // console.log(this.state.password)
     }
 
 

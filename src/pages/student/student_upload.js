@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/student/student_upload.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeaderStudent from '../../components/student/student_header';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom'
@@ -40,7 +40,7 @@ class Upload extends Component {
     componentDidMount() {
         // console.log('kj7ikik', localStorage.getItem('tokenlogin'))
         axios.get( config.baseurl + 'student/' + this.props.match.params.id).then(res => {
-            console.log('erroorrrrrr', res)
+            // console.log('erroorrrrrr', res)
             this.setState({ student: res.data.student })
             localStorage.setItem('student', JSON.stringify(res.data.student))
         })

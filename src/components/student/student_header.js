@@ -26,7 +26,7 @@ class StudentHeader extends Component {
     componentDidMount() {
         console.log(this.props.match.params.id, 'sadasdsad')
         axios.get( config.baseurl + 'student/' + this.props.match.params.id).then(res => {
-            console.log('header data', res.data)
+            // console.log('header data', res.data)
             this.setState({ student: res.data.student })
         })
     }

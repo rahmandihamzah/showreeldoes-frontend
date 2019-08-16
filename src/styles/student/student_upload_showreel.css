@@ -1,3 +1,5 @@
+
+
 .wrap-preview {
     background-color: #313131;
     min-height: 300px ;
@@ -41,7 +43,7 @@
     -webkit-transform: translateX(-50%);
 }
 .wrapper-image {
-    background: red;
+    background: black;
 }
 .wrapper-image:hover .btn-change {
     visibility: visible;
