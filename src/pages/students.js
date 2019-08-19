@@ -17,7 +17,7 @@ class Students extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://192.168.2.11:5000/v1/students')
+        axios.get('https://showreeldoes-backend.herokuapp.com/v1/students')
             .then((response) => {
                 console.log(response)
                 this.setState({

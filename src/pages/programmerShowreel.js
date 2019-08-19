@@ -15,7 +15,7 @@ class ProgrammerShowreel extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://192.168.2.11:5000/v1/showreels')
+        axios.get('https://showreeldoes-backend.herokuapp.com/v1/showreels')
             .then((response) => {
                 console.log(response.data.showreels)
                 this.setState({
