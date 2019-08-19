@@ -27,7 +27,7 @@ class ShowreelDetail extends Component {
 
     componentDidMount() {
         console.log(this.props.match.params.id)
-        axios.get('http://192.168.2.11:5000/v1/showreel/' + this.props.match.params.id)
+        axios.get('https://showreeldoes-backend.herokuapp.com/v1/showreel/' + this.props.match.params.id)
             .then((response) => {
                 console.log(response.data.results.fileUpload.includes("video"))
 

@@ -14,7 +14,7 @@ class About extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://192.168.2.11:5000/v1/abouts')
+        axios.get('https://showreeldoes-backend.herokuapp.com/v1/abouts')
             .then((response) => {
                 console.log(response.data.abouts)
                 this.setState({
