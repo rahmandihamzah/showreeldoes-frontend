@@ -40,11 +40,11 @@ class Login extends Component {
     // Form Value
     username(u) {
         this.setState({ username: u.target.value })
-        // console.log(u.target.value)
+        console.log(u.target.value)
     }
     password(p) {
         this.setState({ password: p.target.value })
-        // console.log(p.target.value)
+        console.log(p.target.value)
     }
     // Data Send
     
@@ -56,7 +56,7 @@ class Login extends Component {
         axios.post( config.baseurl + 'login/' , data).then(res => {
             console.log(res.data)
             localStorage.setItem('tokenlogin', res.data.lastesUpdate.token)
-            localStorage.setItem('idStudent', res.data.lastesUpdate.id_student)
+            localStorage.setItem('idStudent', res.data.lastesUpdate.id_student._id)
             this.props.history.push('/student/upload/' + res.data.lastesUpdate.id_student._id)
         }).catch(error => {
             // console.log("Bangsat error")
