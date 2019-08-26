@@ -14,12 +14,24 @@ class Upload extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            student: {},
-            file: null,
-            uploadCancel: false
+            student     : {},
+            file        : null,
+            uploadCancel: false,
+            title       : '',
+            description : '',  
         }
-        this.previewFile = this.previewFile.bind(this)
+        this.previewFile        = this.previewFile.bind(this)
+        this.handleDataChange   = this.handleDataChange.bind(this)
     }
+
+    handleDataChange(e) {
+        this.setState(state => ({ title: e.target.value}));
+        console.log(e.target.value)
+    }
+    // handleDescriptionChange(e) {
+    //     this.setState({ description: e.target.value})
+    //     console.log(e.target.value)
+    // }
 
     previewFile(e) {
         if (e.target.files[0]) {
@@ -49,7 +61,7 @@ class Upload extends Component {
     render() {
         return (
             <div>
-                <HeaderStudent />
+                <HeaderStudent data={this.state.title} />
                 <h3 className="show-them-reel d-flex justify-content-center mb-0 text-capitalize">Show them your reel!</h3>
                 {/* Upload File */}
                 {/* <div className="file-upload">

@@ -15,7 +15,6 @@ class StudentHeader extends Component {
         this.state = {
             dropdownOpen: false,
             student : {}
-            
         }
     }
     toggle() {
@@ -24,29 +23,29 @@ class StudentHeader extends Component {
         }))
     };
     componentDidMount() {
-        console.log(this.props.match.params.id, 'sadasdsad')
+        // console.log( 'ID Student', this.props.match.params.id)
         axios.get( config.baseurl + 'student/' + this.props.match.params.id).then(res => {
-            // console.log('header data', res.data)
+            // console.log('Geting data', res.data.student)
             this.setState({ student: res.data.student })
         })
     }
-
-    signout() {
-        axios.get( config.baseurl + 'logout').then(res => {
-            console.log(res)
-            if (res.data.login === false) {
-                localStorage.removeItem('tokenlogin')
-                this.props.history.push('/')
-            }
-        })
-    }
-    
     linkPage() {
         this.props.history.push('/student/profile/' + localStorage.getItem('idStudent'))
     }
 
+    // signout() {
+    //     axios.get( config.baseurl + 'logout').then(res => {
+    //         console.log(res)
+    //         if (res.data.login === false) {
+    //             localStorage.removeItem('tokenlogin')
+    //             this.props.history.push('/')
+    //         }
+    //     })
+    // }
+    
+   
+
     render() {
-        // const data = JSON.parse(localStorage.getItem("student"));
         return (
             <div>
                 {/* Navbar */}

@@ -10,44 +10,57 @@ import Moment from "react-moment";
 import moment from 'moment'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { config } from '../../config';
 
 class StudentProfile extends Component {
 
     constructor() {
         super()
         this.state = {
-            edit: false,
-            hide: true,
-            dataStudent: {},
-            type: 'password',
-            eye: 'eye-slash',
-            startDate: new Date(),
-            date: '',
-            gender: false,
-            username: '',
-            password: '',
-            full_name: '',
-            department: '',
-            // birthday: '',
-            email: '',
-            address: '',
-            phone: ''
+            edit            : false,
+            hide            : true,
+            dataStudent     : {},
+            type            : 'password',
+            eye             : 'eye-slash',
+            startDate       : new Date(),
+            date            : '',
+            gender          : false,
+            username        : '',
+            password        : '',
+            full_name       : '',
+            department      : '',
+            birthday        : '',
+            email           : '',
+            address         : '',
+            phone           : '',
+            all_data_student: {},
+            status          : '',
         }
         this.showHide = this.showHide.bind(this)
         this.handleChange = this.handleChange.bind(this);
     }
-    // Get Data
+
+
+    // Get Data 
     componentDidMount() {
-        this.getData ()
-        // console.log(this.props.match.params.id)
+        this.getData()
+        // console.log('id')
     }
+    // // AXIOS
     getData() {
-        axios.get('http://192.168.2.11:5000/v1/student/' + this.props.match.params.id)
+        // console.log("GET ID",this.props.match.params.id)
+        axios.get(config.baseurl + 'student/' + this.props.match.params.id)
             .then(res => {
-                console.log(res.data)
+                console.log( 'Data Student',res.data.student)
                 this.dataStudent(res.data.student)
                 this.setDate(res.data.student.birthday)
-                this.setState({ render: true })
+                this.setState({ 
+                    render              : true,
+                    username            : res.data.student.id_user.username,
+                    password            : res.data.student.id_user.password,
+                    all_data_student    : res.data.student,
+                    status              : res.data.student.status
+                })
             });
     }
 
@@ -94,18 +107,25 @@ class StudentProfile extends Component {
             })
         }
         // STATUS
-        if (data.status === true) {
-            data.status = 'Mahasiswa'
-            this.setState({
-                dataStudent: data
-            })
-            console.log(this.state.dataStudent)
-        } else {
-            data.status = "Lulus"
-            this.setState({
-                dataStudent: data
-            })
-        }
+        // if (data.status === true) {
+        //     data.status = 'Mahasiswa'
+        //     this.setState({
+        //         dataStudent: data
+        //     })
+        //     // console.log(this.state.dataStudent)
+        // } else {
+        //     data.status = "Lulus"
+        //     this.setState({
+        //         dataStudent: data
+        //     })
+        // }
+    }
+
+    handleDataChange(data) {
+        this.setState({[data.target.name] : data.target.value})
+    }
+    handleDateChange(date) {
+        this.setState( {date: moment(date).format('DD-MM-YYYY')})
     }
     // Update data Form Profile
     updateData (id) {
@@ -119,7 +139,7 @@ class StudentProfile extends Component {
             address: this.state.address,
             phone: this.state.phone,
         }
-        axios.put('http://192.168.2.11:5000/v1/student/:id', data).then(res => {
+        axios.put(config.baseurl + 'student/:id', data).then(res => {
             // console.log(res.data)
 
             this.getData()
@@ -185,8 +205,8 @@ class StudentProfile extends Component {
                                             <p>:</p>
                                         </div>
                                         <div className="font-weight-bold">
-                                            <p>sdfsdfs</p>
-                                            <p>sdfsdfs</p>
+                                            <p>{this.state.username}</p>
+                                            <p>88888888</p>
                                             <br />
                                             <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.full_name}</p>
                                             <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.department}</p>
@@ -222,7 +242,7 @@ class StudentProfile extends Component {
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Username</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="username" type="name" placeholder="" />
+                                                            <Form.Control name="username" type="name"  />
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Password */}
@@ -257,7 +277,7 @@ class StudentProfile extends Component {
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Status</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="status" type="name" placeholder={this.state.dataStudent.status} />
+                                                            <Form.Control name="status" type="name" />
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Gender */}
