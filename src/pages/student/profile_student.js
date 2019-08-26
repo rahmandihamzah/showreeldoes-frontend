@@ -129,6 +129,13 @@ class StudentProfile extends Component {
     }
     // Update data Form Profile
     updateData (id) {
+        let status_student = ''
+        if(this.state.status === 'Lulus') {
+            status_student = false
+        } else {
+            status_student = true
+        }
+
         let data = {
             username    : this.state.username,
             password    : this.state.password,
@@ -210,7 +217,11 @@ class StudentProfile extends Component {
                                             <br />
                                             <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.full_name}</p>
                                             <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.department}</p>
-                                            <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.status}</p>
+                                            {this.state.dataStudent.status === true ? 
+                                                <p style={{  textTransform: 'uppercase'}}>Mahasiswa</p>
+                                                :
+                                                <p style={{  textTransform: 'uppercase'}}>Lusus</p>
+                                            }
                                             <p>{this.state.dataStudent.gender}</p>
                                             <p><Moment format="DD/MM/YYYY">{this.state.dataStudent.birthday}</Moment></p>
                                             <p>{this.state.dataStudent.email}</p>
@@ -277,14 +288,40 @@ class StudentProfile extends Component {
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Status</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="status" type="name" />
+                                                            <div className="form-check">
+                                                                {this.state.status === true ?
+                                                                    <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios1" onChange={this.handleDataChange.bind(this)} checked value="Mahasiswa" ref="mahasiswa" />
+                                                                    :
+                                                                <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios1" onChange={this.handleDataChange.bind(this)} value="Mahasiswa" ref="mahasiswa" />
+                                                                }
+                                                                <label className="form-check-label">Mahasiswa</label>
+                                                            </div>
+                                                            <div className="form-check">
+                                                                {this.state.status === false ?
+                                                                    <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios2" onChange={this.handleDataChange.bind(this)} checked value="Lulus" ref="lulus" />
+                                                                    :
+                                                                    <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios2" onChange={this.handleDataChange.bind(this)} value="Lulus" ref="lulus" />
+                                                                }
+                                                                <label className="form-check-label">Lulus</label>
+                                                            </div>
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Gender */}
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Gender</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="gender" type="name" placeholder={this.state.dataStudent.gender} />
+                                                        <div className="form-check">
+                                                            <input name="gender" className="form-check-input" type="radio" name="gender" id="exampleGender1" onChange={this.handleDataChange.bind(this)} />
+                                                            <label className="form-check-label" >
+                                                                {this.state.dataStudent.gender}
+                                                            </label>
+                                                            </div>
+                                                            <div className="form-check">
+                                                                <input name="gender" className="form-check-input" type="radio" name="gender" id="exampleGender2" onChange={this.handleDataChange.bind(this)} />
+                                                                <label className="form-check-label" >
+                                                                P
+                                                            </label>
+                                                        </div>
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Birthday */}
@@ -293,7 +330,7 @@ class StudentProfile extends Component {
                                                         <Col sm="9">
                                                             <DatePicker
                                                                 placeholderText={this.state.date}
-                                                                onChange={this.handleChange}
+                                                                onChange={this.handleDateChange.bind(this)}
                                                                 dateFormat="MMMM d, yyyy" className="p-1 col w-100 rounded" />
                                                         </Col>
                                                     </Form.Group>
