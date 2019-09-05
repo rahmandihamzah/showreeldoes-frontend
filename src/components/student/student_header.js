@@ -26,22 +26,25 @@ class StudentHeader extends Component {
         // console.log( 'ID Student', this.props.match.params.id)
         axios.get( config.baseurl + 'student/' + this.props.match.params.id).then(res => {
             // console.log('Geting data', res.data.student)
-            this.setState({ student: res.data.student })
+            // console.log("Student", res.data.student)
+            this.setState({ 
+                student: res.data.student
+            })
         })
     }
     linkPage() {
         this.props.history.push('/student/profile/' + localStorage.getItem('idStudent'))
     }
 
-    // signout() {
-    //     axios.get( config.baseurl + 'logout').then(res => {
-    //         console.log(res)
-    //         if (res.data.login === false) {
-    //             localStorage.removeItem('tokenlogin')
-    //             this.props.history.push('/')
-    //         }
-    //     })
-    // }
+    signout() {
+        axios.get( config.baseurl + 'logout').then(res => {
+            console.log('wakwakawawaw')
+            if (res.data.login === false) {
+                localStorage.removeItem('tokenlogin')
+                this.props.history.push('/')
+            }
+        })
+    }
     
    
 
@@ -57,12 +60,12 @@ class StudentHeader extends Component {
                             </Link>
                         </li>
                     </ul>
-                    <ul className="right-nav d-flex p-0 mr-lg-4">
+                    <ul className="right-nav d-flex p-0 mr-lg-4 m-0">
                         <p className="align-self-center my-lg-0 mr-lg-3 m-0 text-capitalize" >{this.state.student.full_name}</p>
                         <li className="mr-2">
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="shadow">
                                 <DropdownToggle className="togle-button">
-                                    <img className="profile-icon" src={ProfileIcon} />
+                                    <img className="profile-icon" src={this.state.student.profile_pic} />
                                 </DropdownToggle>
                                 <DropdownMenu right className="m-0">
                                     <DropdownItem onClick={() => this.linkPage()}>Profile</DropdownItem>

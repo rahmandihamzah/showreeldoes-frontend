@@ -32,6 +32,11 @@
     background: #72727272;
     font-weight: 400;
 }
+.photoProfile {
+    max-width: 100px;
+}
+
+
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

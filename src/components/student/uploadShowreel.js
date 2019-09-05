@@ -25,6 +25,7 @@ class UploadShowreel extends Component {
         this.refs.upload.click()
     }
     preview(e) {
+        console.log(e.target.files[0])
         if (e.target.files[0]) {
             this.setState({
                 file: URL.createObjectURL(e.target.files[0]),
@@ -33,40 +34,33 @@ class UploadShowreel extends Component {
             this.refs.iconUpload.style.display = "none"
         }
     }
+    // imageHandler = event => {
+    //     console.log(event.target);
+    // }
+
     // Handle Data input
     handleData(d) {
         console.log(d.target.name)
         console.log(d.target.value)
         this.setState({ [d.target.name]: d.target.value})
+        // this.setState({ })
+
 
     }
 
     // UPLOAD DATA
     publish() {
+        console.log('Publish')
         let data = {
             title : this.state.title,
-            description: this.state.description
+            description: this.state.description,
+            file    : this.state.file
         }
         let id = localStorage.getItem('idStudent')
         axios.post( config.baseurl + 'showreel/' + id, data).then(
             res => {console.log(res.data)})
-            console.log(this.state.title, this.state.description)
+        //     console.log(this.state.title, this.state.description)
     }
-
-    // componentDidMount() {
-    //     console.log( 'kj7ikik', localStorage.getItem('tokenlogin'))
-    //     if (! this.props.match.params.id) {
-    //         this.props.history.push('/')
-    //         console.log('gak boleh masuyk')
-    //     } else {
-    //         console.log('MASULK')
-    //         console.log(this.props.match.params.id)
-    //         // axios.get('http://192.168.2.12:5000/v1/student/' + this.props.match.params.id).then(res => {
-    //         //     console.log(res)
-    //         //     this.setState({ student: res.data.student })
-    //         // })
-    //     }
-    // }
     render() {
         return (
             <div>
@@ -112,7 +106,7 @@ class UploadShowreel extends Component {
                                     onChange={this.handleData.bind(this)}
                                     rows="5" />
                             </FormGroup>
-                            <Button type="submit" color="danger" onClick={ () => this.publish()}>Publish</Button>
+                            <Button color="danger" onClick={ () => this.publish()}>Publish</Button>
                         </Form>
                         <div className="upload-save col-lg-2 ml-auto p-0 p-lg-2">
                             {/* <FontAwesomeIcon icon="cloud-upload-alt" className="fas fa-7x icon-upload" color="grey" /> */}
