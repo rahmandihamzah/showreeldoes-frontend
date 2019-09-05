@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import '../../styles/student/student_upload.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import HeaderStudent from '../../components/student/student_header';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom'
-// import { Button } from 'react-bootstrap';
 import {config} from '../../config'
 import UploadShowreel from '../../components/student/uploadShowreel'
 
+// import { Button } from 'react-bootstrap'; 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Upload extends Component {
 

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../../styles/student/profile_student.css';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { Input, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap"
-import Profile2 from '../../images/man.png'
+import { Input, InputGroup, InputGroupAddon, InputGroupText, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap"
 import StudentHeader from '../../components/student/student_header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Moment from "react-moment";
@@ -11,30 +10,33 @@ import moment from 'moment'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { config } from '../../config';
+// import Profile2 from '../../images/man.png'
 
 class StudentProfile extends Component {
 
     constructor() {
         super()
         this.state = {
-            edit            : false,
-            hide            : true,
-            dataStudent     : {},
-            type            : 'password',
-            eye             : 'eye-slash',
-            startDate       : new Date(),
-            date            : '',
-            gender          : false,
-            username        : '',
-            password        : '',
-            full_name       : '',
-            department      : '',
-            birthday        : '',
-            email           : '',
-            address         : '',
-            phone           : '',
+            edit: false,
+            hide: true,
+            dataStudent: {},
+            type: 'password',
+            eye: 'eye-slash',
+            startDate: new Date(),
+            date: '',
+            gender: false,
+            username: '',
+            password: '',
+            full_name: '',
+            department: '',
+            dropdown: false,
+            birthday: '',
+            email: '',
+            address: '',
+            phone: '',
             all_data_student: {},
-            status          : '',
+            status: '',
+            id: ''
         }
         this.showHide = this.showHide.bind(this)
         this.handleChange = this.handleChange.bind(this);
@@ -51,15 +53,16 @@ class StudentProfile extends Component {
         // console.log("GET ID",this.props.match.params.id)
         axios.get(config.baseurl + 'student/' + this.props.match.params.id)
             .then(res => {
-                console.log( 'Data Student',res.data.student)
+                console.log('Data Student', res.data.student)
                 this.dataStudent(res.data.student)
                 this.setDate(res.data.student.birthday)
-                this.setState({ 
-                    render              : true,
-                    username            : res.data.student.id_user.username,
-                    password            : res.data.student.id_user.password,
-                    all_data_student    : res.data.student,
-                    status              : res.data.student.status
+                this.setState({
+                    render: true,
+                    username: res.data.student.id_user.username,
+                    password: res.data.student.id_user.password,
+                    all_data_student: res.data.student,
+                    status: res.data.student.status,
+                    id: res.data.student._id
                 })
             });
     }
@@ -92,6 +95,14 @@ class StudentProfile extends Component {
             edit: false
         })
     }
+
+    //Department Toggle
+    toggleDep() {
+        this.setState( open => ({
+            dropdownDepOpen : !open.dropdown
+        }))
+    }
+
     // Gender and Status Changed 
     dataStudent(data) {
         // Gender
@@ -106,54 +117,50 @@ class StudentProfile extends Component {
                 dataStudent: data
             })
         }
-        // STATUS
-        // if (data.status === true) {
-        //     data.status = 'Mahasiswa'
-        //     this.setState({
-        //         dataStudent: data
-        //     })
-        //     // console.log(this.state.dataStudent)
-        // } else {
-        //     data.status = "Lulus"
-        //     this.setState({
-        //         dataStudent: data
-        //     })
-        // }
     }
 
     handleDataChange(data) {
-        this.setState({[data.target.name] : data.target.value})
+        this.setState({ [data.target.name]: data.target.value })
     }
     handleDateChange(date) {
-        this.setState( {date: moment(date).format('DD-MM-YYYY')})
+        this.setState({ date: moment(date).format('DD-MM-YYYY') })
     }
     // Update data Form Profile
-    updateData (id) {
+    updateData() {
+        // console.log(id)
         let status_student = ''
-        if(this.state.status === 'Lulus') {
+        if (this.state.status === 'Lulus') {
             status_student = false
         } else {
             status_student = true
         }
 
         let data = {
-            username    : this.state.username,
-            password    : this.state.password,
-            full_name   : this.state.full_name,
-            department  : this.state.department,
-            // birthday: '',
-            email       : this.state.email,
+            username: this.state.username,
+            password: this.state.password,
+            full_name: this.state.full_name,
+            department: this.state.department,
+            birthday: this.state.birhtday,
+            email: this.state.email,
             address: this.state.address,
             phone: this.state.phone,
         }
-        axios.put(config.baseurl + 'student/:id', data).then(res => {
-            // console.log(res.data)
+        console.log(data, 'dasdfsdfjslkdfjlskdfjsld')
+        // axios.put(config.baseurl + 'student/' + this.state.id , data).then(res => {
+        //     // console.log(res.data)
 
-            this.getData()
-        }).catch(error => {
+        //     this.getData()
+        // }).catch(error => {
 
-            console.log("errorrrrrrrrr")
-        })
+        //     console.log("errorrrrrrrrr")
+        // })
+    }
+
+    profileChange() {
+
+    }
+    changeProfile() {
+        this.refs.profileImg.click()
     }
     render() {
         return (
@@ -181,14 +188,15 @@ class StudentProfile extends Component {
                                     </li>
                                 </ul>
                             </div>
+
                             {/* Student Profile BOX */}
                             <div className="col-sm-12 col-md-5 col-lg-5 mx-auto mb-5 border border-dark round ">
-                                <div className="d-flex px-lg-5 pt-lg-5 p-0  " >
+                                <div className="d-flex px-lg-5 pt-lg-5 p-2  " >
                                     <div className="row justify-content-center">
-                                        <div className="col-5 ml-3">
+                                        <div className="col-5 m-0">
                                             <p>username</p>
                                             <p>password</p>
-                                            <br />
+                                            {/* <br /> */}
                                             <p>Full Name</p>
                                             <p>Department</p>
                                             <p>Status</p>
@@ -198,10 +206,10 @@ class StudentProfile extends Component {
                                             <p>Address</p>
                                             <p>Phone</p>
                                         </div>
-                                        <div className="col-1 mr-3">
+                                        <div className="col-1 mr-0">
                                             <p>:</p>
                                             <p>:</p>
-                                            <br />
+                                            {/* <br /> */}
                                             <p>:</p>
                                             <p>:</p>
                                             <p>:</p>
@@ -214,13 +222,13 @@ class StudentProfile extends Component {
                                         <div className="font-weight-bold">
                                             <p>{this.state.username}</p>
                                             <p>88888888</p>
-                                            <br />
+                                            {/* <br /> */}
                                             <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.full_name}</p>
                                             <p style={{ textTransform: 'uppercase' }}>{this.state.dataStudent.department}</p>
-                                            {this.state.dataStudent.status === true ? 
-                                                <p style={{  textTransform: 'uppercase'}}>Mahasiswa</p>
+                                            {this.state.dataStudent.status === true ?
+                                                <p style={{ textTransform: 'uppercase' }}>Mahasiswa</p>
                                                 :
-                                                <p style={{  textTransform: 'uppercase'}}>Lusus</p>
+                                                <p style={{ textTransform: 'uppercase' }}>Lusus</p>
                                             }
                                             <p>{this.state.dataStudent.gender}</p>
                                             <p><Moment format="DD/MM/YYYY">{this.state.dataStudent.birthday}</Moment></p>
@@ -230,6 +238,7 @@ class StudentProfile extends Component {
                                         </div>
                                     </div>
                                 </div>
+
                                 {/* Edit Data Profile */}
                                 <div className="text-right">
                                     <FontAwesomeIcon icon="pencil-alt" title="Edit Profile" className="m-4 fas fa-2x text-muted" onClick={() => this.openEdit()} />
@@ -242,28 +251,30 @@ class StudentProfile extends Component {
                                     <div className="col-12 p-0">
                                         <div className="row">
                                             <div className="image-edit col-lg-3 text-center m-0 p-0">
-
                                                 {/* Mengganti Profile Image */}
-                                                <img src={Profile2} alt="" />
-                                                <label>Click to browse</label>
+                                                <input type="file" className="d-none" ref="profileImg" onChange={this.profileChange.bind(this)} />
+                                                <div ref="changeProfile" className="" >
+                                                    <img src={this.state.dataStudent.profile_pic} className="photoProfile " alt="" onClick={() => this.changeProfile()} />
+                                                    <label>Click to browse</label>
+                                                </div>
                                             </div>
-                                            <div className="form-edit col-lg-9">
+                                            <div className="form-edit col-lg-9 ">
                                                 <div className="p-2">
                                                     {/* Useername */}
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Username</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="username" type="name"  />
+                                                            <Form.Control name="username" type="name" />
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Password */}
                                                     <Form.Group
                                                         as={Row}
                                                         controlId="formPlaintextPassword">
-                                                        <Form.Label  column sm="3">Password</Form.Label>
+                                                        <Form.Label column sm="3">Password</Form.Label>
                                                         <Col sm="9">
                                                             <InputGroup>
-                                                                <Input name="password" type={this.state.type} placeholder="username"  />
+                                                                <Input name="password" type={this.state.type} placeholder="username" />
                                                                 <InputGroupAddon addonType="append">
                                                                     <InputGroupText><FontAwesomeIcon icon={this.state.type === 'input' ? 'eye' : 'eye-slash'} onClick={this.showHide} /></InputGroupText>
                                                                 </InputGroupAddon>
@@ -274,14 +285,24 @@ class StudentProfile extends Component {
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Full Name</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="full_name" type="name" placeholder={this.state.dataStudent.full_name} onChange={event => this.handleChange(event)} />
+                                                            <Form.Control name="full_name" type="name" placeholder={this.state.dataStudent.full_name} onChange={this.handleDataChange.bind(this)} />
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Department */}
                                                     <Form.Group as={Row} >
                                                         <Form.Label column sm="3">Department</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control name="department" type="name" placeholder={this.state.dataStudent.department} />
+                                                            <Form.Control name="department" type="name" placeholder={this.state.dataStudent.department} onChange={this.handleDataChange.bind(this)} />
+                                                            <Dropdown isOpen={this.state.dropdownDepOpen} toggle={this.toggleDep} className="shadow">
+                                                                <DropdownToggle className="togle-button">Nbhbsdfhsvdfhvsdhff</DropdownToggle>
+                                                                <DropdownMenu right className="m-0">
+                                                                    <DropdownItem >Profile</DropdownItem>
+                                                                    <DropdownItem divider />
+                                                                    <DropdownItem >
+                                                                        <FontAwesomeIcon icon="sign-out-alt" className="text-danger mr-2" />Sign Out
+                                                                    </DropdownItem>
+                                                                </DropdownMenu>
+                                                            </Dropdown>
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Status */}
@@ -292,7 +313,7 @@ class StudentProfile extends Component {
                                                                 {this.state.status === true ?
                                                                     <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios1" onChange={this.handleDataChange.bind(this)} checked value="Mahasiswa" ref="mahasiswa" />
                                                                     :
-                                                                <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios1" onChange={this.handleDataChange.bind(this)} value="Mahasiswa" ref="mahasiswa" />
+                                                                    <input name="status" className="form-check-input" type="radio" name="status" id="exampleRadios1" onChange={this.handleDataChange.bind(this)} value="Mahasiswa" ref="mahasiswa" />
                                                                 }
                                                                 <label className="form-check-label">Mahasiswa</label>
                                                             </div>
@@ -310,18 +331,18 @@ class StudentProfile extends Component {
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Gender</Form.Label>
                                                         <Col sm="9">
-                                                        <div className="form-check">
-                                                            <input name="gender" className="form-check-input" type="radio" name="gender" id="exampleGender1" onChange={this.handleDataChange.bind(this)} />
-                                                            <label className="form-check-label" >
-                                                                {this.state.dataStudent.gender}
-                                                            </label>
+                                                            <div className="form-check">
+                                                                <input name="gender" className="form-check-input" type="radio" name="gender" id="exampleGender1" onChange={this.handleDataChange.bind(this)} />
+                                                                <label className="form-check-label" >
+                                                                    {this.state.dataStudent.gender}
+                                                                </label>
                                                             </div>
                                                             <div className="form-check">
                                                                 <input name="gender" className="form-check-input" type="radio" name="gender" id="exampleGender2" onChange={this.handleDataChange.bind(this)} />
                                                                 <label className="form-check-label" >
-                                                                P
-                                                            </label>
-                                                        </div>
+                                                                    P
+                                                        </label>
+                                                            </div>
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Birthday */}
@@ -329,6 +350,7 @@ class StudentProfile extends Component {
                                                         <Form.Label column sm="3">Birthday</Form.Label>
                                                         <Col sm="9">
                                                             <DatePicker
+                                                                name=""
                                                                 placeholderText={this.state.date}
                                                                 onChange={this.handleDateChange.bind(this)}
                                                                 dateFormat="MMMM d, yyyy" className="p-1 col w-100 rounded" />
@@ -338,21 +360,21 @@ class StudentProfile extends Component {
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Email</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control type="email" placeholder={this.state.dataStudent.email} />
+                                                            <Form.Control type="email" placeholder={this.state.dataStudent.email} onChange={this.handleDataChange.bind(this)} />
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Address */}
                                                     <Form.Group as={Row}>
                                                         <Form.Label column sm="3">Address</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control type="address" placeholder={this.state.dataStudent.address} />
+                                                            <Form.Control type="address" placeholder={this.state.dataStudent.address} onChange={this.handleDataChange.bind(this)} />
                                                         </Col>
                                                     </Form.Group>
                                                     {/* Phone */}
                                                     <Form.Group as={Row} >
                                                         <Form.Label column sm="3">Phone</Form.Label>
                                                         <Col sm="9">
-                                                            <Form.Control type="number" placeholder={this.state.dataStudent.phone} />
+                                                            <Form.Control type="number" placeholder={this.state.dataStudent.phone} onChange={this.handleDataChange.bind(this)} />
                                                         </Col>
                                                     </Form.Group>
                                                 </div>
