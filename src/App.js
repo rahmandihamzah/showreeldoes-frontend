@@ -1,15 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './styles/App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faGhost } from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 
+
+// pengunjung
 import Home from './pages/home';
 import About from './pages/about';
 import Department from './pages/department';
+import Partner from './pages/partner';
 import Students from './pages/students';
 import DashboardAdmin from './pages/Admin/Dashboard/admin_dashboard';
 import Admin_department from './pages/Admin/Department/admin_department';
@@ -35,12 +39,27 @@ import Admin_adddiscuss from './pages/Admin/Discuss/admin_adddiscuss';
 import Admin_login from './pages/Admin/Log In/admin_login';
 import Admin_Detail_Showreel from './pages/Admin/detail_showreel/detail_showreel';
 
+import StudentProfile from './pages/studentProfile';
+import ModelerShowreel from './pages/modelerShowreel';
+import AnimatorShowreel from './pages/animatorShowreel';
+import CompositorShowreel from './pages/compositorShowreel';
+import ProgrammerShowreel from './pages/programmerShowreel';
+import ShowreelDetail from './pages/showreelDetail';
+
+// student
+import Login from './pages/login';
+import ProfileStudent from '../src/pages/student/profile_student';
+import StudentUpload from '../src/pages/student/student_upload';
+
+// admin
+
 library.add(faGhost, fas);
 
 function App() {
   return (
-    <Router>
-      <div>
+    <div>
+      <Router>
+        {/* pengunjung */}
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/department" component={Department} />
@@ -70,6 +89,25 @@ function App() {
         <Route path="/admin/detailshowreel/:id" component={Admin_Detail_Showreel} />
       </div>
     </Router>
+        <Route exact path="/department" component={Department} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/partner" component={Partner} />
+        <Route exact path="/students" component={Students} />
+        <Route exact path="/studentProfile/:id" component={StudentProfile} />
+        <Route exact path="/modelerShowreel" component={ModelerShowreel} />
+        <Route exact path="/animatorShowreel" component={AnimatorShowreel} />
+        <Route exact path="/compositorShowreel" component={CompositorShowreel} />
+        <Route exact path="/programmerShowreel" component={ProgrammerShowreel} />
+        <Route exact path="/showreelDetail/:id" component={ShowreelDetail} />
+
+        {/* student */}
+        <Route exact path="/student" component={Login} />
+        <Route exact path="/student/upload/:id" component={StudentUpload} />
+        <Route exact path="/student/profile/:id" component={ProfileStudent} />
+    
+        {/* admin */}
+      </Router>
+    </div>
   )
 }
 

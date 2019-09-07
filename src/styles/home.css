@@ -3,42 +3,34 @@
 }
 
 .artwork-space {
-    border: 1px solid black;
     width: 100%;
     height: 86vh;
     text-align: center;
-    /* background-image: url("../images/"); */
+    background-image: url("../images/SPACE_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     background-attachment: fixed;
 }
 
 .second-nav {
-    display: flex;
-    justify-content: center;
-}
-
-.second-nav ul {
-    width: 30%;
-    margin: 0;
-    padding: 10px;
     list-style: none;
-    /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Barlow', sans-serif;
-    display: flex;
-    justify-content: space-between;
 }
 
-.second-nav ul li a {
+.second-nav li a {
     color: #313131;
 }
 
-.second-nav ul li a:hover {
+.second-nav li a:hover {
     text-decoration: none;
     color: #ca3e47;
+    font-style: none;
 }
 
 .showreel-highlight {
     width: 100%;
-    background-color: #DEDEDE;
+    background-color: rgba(232, 241, 241, 0.787);
     display: flex;
     justify-content: center;
     font-family: 'Barlow', sans-serif;
@@ -46,11 +38,14 @@
 }
 
 .showreel-container {
+    background-color: rgba(232, 241, 241, 0.787);
+
     /* display: grid;
     grid-template-columns: auto auto auto auto auto; */
     /* border: 1px solid black; */
     list-style: none;
     padding: 0;
+    width: 100%;
     /* display: flex;
     flex-wrap: wrap; */
     /* display: flex; */
@@ -59,16 +54,15 @@
 
 .showreel-space {
     /* border: 1px solid #ffffff; */
-    width: 350px;
-    margin: 5px;
+    width: 287px;
 }
 
 .showreel-frame {
     /* border: 1px solid black; */
     border: 0;
     background-color: #ffffff;
-    width: 350px;
-    height: 300px;
+    width: 100%;
+    height: 262px;
     display: flex;
     justify-content: center;
     padding-top: 4px;
@@ -78,8 +72,28 @@
     border: 1px solid #dedede;
     width: 96%;
     height: 90%;
-    display: flex;
-    align-items: center;
+    position: relative;
+    display: inline-block;
+}
+
+.showreel-thumbnail>.img-thumbnail {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.showreel-thumbnail>.video-thumbnail {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
 }
 
 .showreel-thumbnail:hover {

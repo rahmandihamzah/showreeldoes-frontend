@@ -1,0 +1,45 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+}
+
+.round {
+    /* border: 10px solid #000000; */
+    border-radius: 50px;
+}
+
+.showreel-profile-list {
+    /* width: 100%; */
+    background-color: #DEDEDE;
+    display: flex;
+    justify-content: center;
+    font-family: 'Barlow', sans-serif;
+}
+.wrap-content {
+    margin-top: 5rem;
+}
+.password_input {
+    text-transform: none;
+}
+
+.password_show {
+    cursor: pointer;
+    /* position: absolute; */
+    background: #72727272;
+    font-weight: 400;
+}
+.photoProfile {
+    max-width: 100px;
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}

@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.partner-list {
+    background-color: rgba(232, 241, 241, 0.787);
+}
+
+.partner-container {
+    /* border: 1px solid red; */
+    list-style: none;
+}
+
+.partner-space {
+    width: 250px;
+}
+
+.partner-thumbnail {
+    border-radius: 10px;
+    background-color: #dedede;
+    height: 100px;
+}
+
+.partnersite {
+    font-size: 0.8rem;
+}
+
+.testimoni-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.testimoni-frame {
+    max-width: 70%;
+}
+
+.partner-profile ul {
+    list-style: none;
+}
+
+.testimoni-pic {
+    border: 1px solid black;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.partner-inst {
+    font-size: 0.8rem;
+}
