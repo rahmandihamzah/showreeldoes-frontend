@@ -1,0 +1,53 @@
+.sidebar {
+    position: fixed;
+    top:0;
+    left: -100px;
+    width: 0px;
+    transition: width .8s ease;
+    z-index: 999;
+    background: rgba(000,000,000, 0.9);
+    height: 100vh;
+}
+.sidebar_bg {
+    z-index: 100;
+    height: 100vh;
+    width: 0vh;
+    top:0;
+    position: fixed;
+    background: rgba(000,000,000, 0.5);
+    display:none;
+    transition: width .8s ease-out;
+}
+
+a:hover {
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+.link-page:hover {
+    background: #9e3232;
+    
+}
+.dr-title {
+    font-size: 15px;
+    padding: 5px;
+    color: #fff;
+}
+.dr-title:hover {
+    background: #9e3232;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.card {
+    border: 0px  !important;
+    background: transparent !important;
+}
+.menu_logo img {
+    width: 50px;
+}
+.menu_logo {
+    position: absolute;
+    top:0;
+
+}

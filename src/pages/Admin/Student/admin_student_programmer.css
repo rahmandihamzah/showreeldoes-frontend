@@ -1,0 +1,39 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.text_programmer{
+      text-align: center;
+      margin-top: 25px;
+  }
+
+  
+ 
+  .table_programmer{
+    padding: 50px;
+  }
+
+  .front_table{
+    background-color: #424242;
+    color:red;
+  }
+  
+  
+  .sampah{
+    margin-left: 20px;
+  }
+  .student-admin{
+    max-height: 100vh;
+  }

@@ -1,0 +1,90 @@
+body {
+    background-color: grey;
+}
+
+.department_wrapper {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.left_card {
+    padding: 20px;
+    width: 50%;
+    margin: 30px;
+    box-shadow: 10px 5px 18px #726767;
+    background-color: #ffffff;
+}
+.left_list {
+    display: flex;
+    align-items: center;
+}
+.depart_img {
+    height: 200px;
+    width: 150px;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    overflow: hidden;
+}
+.depart_img img {
+    width: 100%;
+}
+.left_detail {
+    width: 70%;
+}
+
+.left_edit {
+    text-align: right;
+    
+}
+.modelerteks{
+    text-align: center;
+   
+}
+
+.right_card {
+    padding: 20px;
+    width: 50%;
+    margin: 30px;
+    margin-left: auto;
+    box-shadow: 10px 5px 18px #726767;
+    background-color: #ffffff;
+
+}
+.right_list {
+    display: flex;
+    justify-content: flex-end;
+}
+.right_img {
+    height: 200px;
+    width: 150px;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right_detail {
+    width: 70%;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.right_edit {
+    text-align: right;
+    
+}
+/* .animator_text {
+    text-align: right;
+} */
+.animatorteks{
+    text-align: center;
+   
+}

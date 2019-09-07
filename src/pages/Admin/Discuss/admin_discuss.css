@@ -1,0 +1,40 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+   
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .text_partner{
+      text-align: center;
+      margin-top: 25px;
+  }
+
+ 
+  hr {
+    width: 60%;
+  }
+ 
+  .table_discuss{
+    padding: 50px;
+  }
+
+  .front_table{
+    background-color: #424242;
+    color:red;
+  }
+ 
+  .admin_disccuss {
+    max-height: 100%;
+}
+ 

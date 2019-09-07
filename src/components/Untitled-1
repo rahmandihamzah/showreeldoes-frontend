@@ -1,0 +1,79 @@
+ <div className="department-admin">
+                <AdminSidebar/>
+                <div className="col-11 mx-auto">
+                    <div className="modeler_wrapper">
+                        <div className="modeler_card">
+                            <div className="modelerteks">
+                                <h4>3D Modeler</h4>
+                            </div>
+                            <div className="modeler_list">
+                                <div className="modeler_img">
+                                    <FontAwesomeIcon icon="camera-retro" className="text-muted fa-2x" />
+                                </div>
+                                <div className="modeler_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+                            <div className="modeler_edit">
+                                <FontAwesomeIcon icon ="pencil-alt" className="pencil" />
+                            </div>   
+                        </div>
+
+                        <div className="animator_card">
+                            <div className="animatorteks">
+                                <h4>Animator</h4>
+                            </div>
+                            <div className="animator_list">
+                            <div className="animator_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                </div>
+                                <div className="animator_img">
+                                    <FontAwesomeIcon icon="camera-retro" className="text-muted fa-2x" />
+                                </div>
+                                
+                            </div>
+                            <div className="animator_edit">
+                                <FontAwesomeIcon icon ="pencil-alt" className="pencil" />
+                            </div>   
+                        </div>
+                        
+                        <div className="compositor_card">
+                        <div className="compositorteks">
+                                <h4>compositor</h4>
+                            </div>
+                            <div className="compositor_list">
+                                <div className="compositor_img">
+                                    <FontAwesomeIcon icon="camera-retro" className="text-muted fa-2x" />
+                                </div>
+                                <div className="compositor_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+                            <div className="compositor_edit">
+                                <FontAwesomeIcon icon ="pencil-alt" className="pencil" />
+                            </div>   
+                        </div>
+
+                        <div className="programmer_card">
+                            <div className="programmerteks">
+                                <h4>Programmer</h4>
+                            </div>
+                            <div className="programmer_list">
+                            <div className="programmer_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                </div>
+                                <div className="programmer_img">
+                                    <FontAwesomeIcon icon="camera-retro" className="text-muted fa-2x" />
+                                </div>
+                                
+                            </div>
+                            <div className="programmer_edit">
+                                <FontAwesomeIcon icon ="pencil-alt" className="pencil" />
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}

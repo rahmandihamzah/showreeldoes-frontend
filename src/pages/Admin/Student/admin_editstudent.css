@@ -1,0 +1,15 @@
+.about_wrapper {
+    width: 100%;
+    /* position: absolute; */
+    /* top: 70%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+.edit_card {
+    padding: 20px;
+    width: 50%;
+    margin: 30px;
+    box-shadow: 10px 5px 18px #726767;
+    background-color: #ffffff;
+    /* margin-top: 25px; */
+}

@@ -1,0 +1,89 @@
+.about_wrapper {
+    width: 100%;
+    /* position: absolute; */
+    /* top: 70%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+.about_card {
+    padding: 20px;
+    width: 50%;
+    margin: 30px;
+    box-shadow: 10px 5px 18px #726767;
+    background-color: #ffffff;
+    /* margin-top: 25px; */
+}
+.about_list {
+    display: flex;
+    align-items: center;
+}
+.about_img {
+    height: 200px;
+    width: 150px;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    overflow: hidden;
+}
+.about_img img {
+    width: 100%;
+}
+.about_detail {
+    width: 70%;
+}
+
+.icon_edit {
+    text-align: right;
+    
+}
+
+.founder_card {
+    padding: 20px;
+    width: 50%;
+    margin: 30px;
+    margin-left: auto;
+    box-shadow: 10px 5px 18px #726767;
+    background-color: #ffffff;
+
+}
+.founder_list {
+    display: flex;
+    justify-content: flex-end;
+}
+.founder_img {
+    height: 200px;
+    width: 150px;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.founder_detail {
+    width: 70%;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.icon_edit {
+    text-align: right;
+    
+}
+.founder_text {
+    text-align: right;
+}
+
+.dashboard-admin {
+    max-height: 100%;
+}
+
+.page-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
