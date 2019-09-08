@@ -65,7 +65,7 @@ class Department extends Component {
                 {this.state.dataDepartment.map((res, i) => {
                     return (
                         <div key={i}>
-                            {res.title == "Animator" ?
+                            {res.title == "Programmer" ?
                                 <div className="dept-desc-container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center px-4">
                                     <div className="description-area col-md-5 d-flex flex-column align-items-end col-12">
                                         <p className="dept-desc">
