@@ -63,13 +63,13 @@ class Home extends Component {
                             return (
                                 <li className='col-6 col-md-4 col-lg-2 px-1' onClick={() => this.linkToShowreelDetail(res._id)} key={i}>
                                     <div className='showreel-frame'>
-                                        <div className='showreel-thumbnail d-flex justify-content-center'>
+                                        {/* <div className='showreel-thumbnail d-flex justify-content-center'>
                                             {res.fileUpload.includes("image") == true ?
-                                                <img src={res.fileUpload} alt="" className="img-thumbnail" />
+                                                <img src={res.fileUpload} alt="" className="img-thumbnail" />j
                                                 :
                                                 <video className="video-thumbnail" src={res.fileUpload}></video>
                                             }
-                                        </div>
+                                        </div> */}
                                         <div className='showreel-resp'>
                                             {/* <ul>
                                             <li></li>

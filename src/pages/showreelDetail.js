@@ -34,7 +34,7 @@ class ShowreelDetail extends Component {
                 this.setState({
                     showreelById: response.data.results,
                     dataStudent: response.data.results.id_student,
-                    showreelType: response.data.results.fileUpload.includes("images")
+                    showreelType: response.data.results.fileUpload.includes("image")
                 })
 
                 console.log(this.state.showreelById)
