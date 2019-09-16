@@ -45,8 +45,6 @@ class StudentHeader extends Component {
             }
         })
     }
-    
-   
 
     render() {
         return (

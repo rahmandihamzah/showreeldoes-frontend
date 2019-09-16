@@ -3,7 +3,8 @@ import '../../styles/student/student_upload_showreel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
-import {config} from '../../config';
+import { config } from '../../config';
+import Swal from 'sweetalert2';
 
 
 // import HeaderStudent from '../../components/student/student_header';
@@ -13,9 +14,9 @@ class UploadShowreel extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            file        : null,
-            title       : '',
-            description : '',
+            file: null,
+            title: '',
+            description: '',
             // upload      : {},
         };
     }
@@ -42,25 +43,44 @@ class UploadShowreel extends Component {
     handleData(d) {
         console.log(d.target.name)
         console.log(d.target.value)
-        this.setState({ [d.target.name]: d.target.value})
+        this.setState({ [d.target.name]: d.target.value })
         // this.setState({ })
-
-
     }
-
-    // UPLOAD DATA
+    // UPLOAD DATA and To Profile page
     publish() {
         console.log('Publish')
+
+        // this.props.history.push('/student/profile/' + localStorage.getItem('idStudent'))
         let data = {
-            title : this.state.title,
+            title: this.state.title,
             description: this.state.description,
-            file    : this.state.file
+            file: this.state.file
         }
         let id = localStorage.getItem('idStudent')
-        axios.post( config.baseurl + 'showreel/' + id, data).then(
-            res => {console.log(res.data)})
-        //     console.log(this.state.title, this.state.description)
+        axios.post(config.baseurl + 'showreel/' + id, data).then(
+            res => {
+                console.log(res)
+                // this.props.history.push('/student/profile' + id)
+                if (res.showreels += 1) {
+                    Swal.fire(
+                        'Your Showreeel is Uploaded!',
+                        'Success Uploaded',
+                        'success'
+                    )
+                } else {
+                    
+                    Swal.fire(
+                        'Your Showreeel is Uploaded!',
+                        'Success Uploaded',
+                        'error'
+                    )
+                }
+
+            })
     }
+    // this.props.history.push('/student/profile' + localStorage.getItem('idStudent'))
+
+    // console.log(this.state.title, this.state.description)
     render() {
         return (
             <div>
@@ -89,14 +109,14 @@ class UploadShowreel extends Component {
                     <div className="justify-content-between align-items-center">
                         <Form
                             className="col-lg-6 col-12 p-0 p-lg-3"
-                            // onSubmit={this.submitHandler}
+                        // onSubmit={this.submitHandler}
                         >
                             <FormGroup>
                                 <Label for="exampleEmail">Title</Label>
                                 <Input type="title"
                                     name="title"
                                     onChange={this.handleData.bind(this)}
-                                    />
+                                />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleText">Description</Label>
@@ -106,7 +126,7 @@ class UploadShowreel extends Component {
                                     onChange={this.handleData.bind(this)}
                                     rows="5" />
                             </FormGroup>
-                            <Button color="danger" onClick={ () => this.publish()}>Publish</Button>
+                            <Button color="danger" onClick={() => this.publish()}>Publish</Button>
                         </Form>
                         <div className="upload-save col-lg-2 ml-auto p-0 p-lg-2">
                             {/* <FontAwesomeIcon icon="cloud-upload-alt" className="fas fa-7x icon-upload" color="grey" /> */}
