@@ -5,8 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faGhost } from '@fortawesome/free-solid-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { faGhost } from '@fortawesome/free-solid-svg-icons'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
 
 
 // pengunjung
@@ -15,6 +15,19 @@ import About from './pages/about';
 import Department from './pages/department';
 import Partner from './pages/partner';
 import Students from './pages/students';
+import StudentProfile from './pages/studentProfile';
+import ModelerShowreel from './pages/modelerShowreel';
+import AnimatorShowreel from './pages/animatorShowreel';
+import CompositorShowreel from './pages/compositorShowreel';
+import ProgrammerShowreel from './pages/programmerShowreel';
+import ShowreelDetail from './pages/showreelDetail';
+
+// student
+import Login from './pages/login';
+import ProfileStudent from '../src/pages/student/profile_student';
+import StudentUpload from '../src/pages/student/student_upload';
+
+// admin
 import DashboardAdmin from './pages/Admin/Dashboard/admin_dashboard';
 import Admin_department from './pages/Admin/Department/admin_department';
 import Admin_student_3dmodeler from './pages/Admin/Student/admin_student_3dmodeler';
@@ -39,20 +52,6 @@ import Admin_adddiscuss from './pages/Admin/Discuss/admin_adddiscuss';
 import Admin_login from './pages/Admin/Log In/admin_login';
 import Admin_Detail_Showreel from './pages/Admin/detail_showreel/detail_showreel';
 
-import StudentProfile from './pages/studentProfile';
-import ModelerShowreel from './pages/modelerShowreel';
-import AnimatorShowreel from './pages/animatorShowreel';
-import CompositorShowreel from './pages/compositorShowreel';
-import ProgrammerShowreel from './pages/programmerShowreel';
-import ShowreelDetail from './pages/showreelDetail';
-
-// student
-import Login from './pages/login';
-import ProfileStudent from '../src/pages/student/profile_student';
-import StudentUpload from '../src/pages/student/student_upload';
-
-// admin
-
 library.add(faGhost, fas);
 
 function App() {
@@ -66,29 +65,27 @@ function App() {
         <Route path="/students" component={Students} />
         <Route path="/admin/dashboard" component={DashboardAdmin} />
         <Route path="/admin/department" component={Admin_department} />
-        <Route path="/admin/student3dmodeler" component={Admin_student_3dmodeler}/>
-        <Route path="/admin/studentanimator" component={Admin_student_animator}/>
-        <Route path="/admin/studentcompositor" component={Admin_student_compositor}/>
-        <Route path="/admin/studentprogrammer" component={Admin_student_programmer}/>
-        <Route path="/admin/showreel3dmodeler" component={Admin_showreel_3dmodeler}/>
-        <Route path="/admin/showreelprogrammer" component={Admin_showreel_programmer}/>
-        <Route path="/admin/showreelcompositor" component={Admin_showreel_compositor}/>
-        <Route path="/admin/showreelanimator" component={Admin_showreel_animator}/>
-        <Route path="/admin/discuss" component={Admin_discuss}/>
-        <Route path="/admin/adminpartner" component={Admin_partner}/>
-        <Route path="/admin/editshowreel/:id" component={Admin_editshowreel}/>
-        <Route path="/admin/editstudent/:id" component={Admin_editStudent}/>
-        <Route path="/admin/addshowreel/:id" component={Admin_addshowreel}/>
-        <Route path="/admin/addstudent" component={Admin_addstudent}/>
-        <Route path="/admin/addadmin" component={Admin_addadmin}/>
-        <Route path="/admin/listadmin" component={Admin_table}/>
-        <Route path="/admin/addpartner" component={Admin_addpartner}/>
-        <Route path="/admin/editpartner/:id" component={Admin_editpartner}/>
-        <Route path="/admin/adddiscuss/" component={Admin_adddiscuss}/>
-        <Route exact path="/admin" component={Admin_login}/>
+        <Route path="/admin/student3dmodeler" component={Admin_student_3dmodeler} />
+        <Route path="/admin/studentanimator" component={Admin_student_animator} />
+        <Route path="/admin/studentcompositor" component={Admin_student_compositor} />
+        <Route path="/admin/studentprogrammer" component={Admin_student_programmer} />
+        <Route path="/admin/showreel3dmodeler" component={Admin_showreel_3dmodeler} />
+        <Route path="/admin/showreelprogrammer" component={Admin_showreel_programmer} />
+        <Route path="/admin/showreelcompositor" component={Admin_showreel_compositor} />
+        <Route path="/admin/showreelanimator" component={Admin_showreel_animator} />
+        <Route path="/admin/discuss" component={Admin_discuss} />
+        <Route path="/admin/adminpartner" component={Admin_partner} />
+        <Route path="/admin/editshowreel/:id" component={Admin_editshowreel} />
+        <Route path="/admin/editstudent/:id" component={Admin_editStudent} />
+        <Route path="/admin/addshowreel/:id" component={Admin_addshowreel} />
+        <Route path="/admin/addstudent" component={Admin_addstudent} />
+        <Route path="/admin/addadmin" component={Admin_addadmin} />
+        <Route path="/admin/listadmin" component={Admin_table} />
+        <Route path="/admin/addpartner" component={Admin_addpartner} />
+        <Route path="/admin/editpartner/:id" component={Admin_editpartner} />
+        <Route path="/admin/adddiscuss/" component={Admin_adddiscuss} />
+        <Route exact path="/admin" component={Admin_login} />
         <Route path="/admin/detailshowreel/:id" component={Admin_Detail_Showreel} />
-      </div>
-    </Router>
         <Route exact path="/department" component={Department} />
         <Route exact path="/about" component={About} />
         <Route exact path="/partner" component={Partner} />
@@ -104,10 +101,10 @@ function App() {
         <Route exact path="/student" component={Login} />
         <Route exact path="/student/upload/:id" component={StudentUpload} />
         <Route exact path="/student/profile/:id" component={ProfileStudent} />
-    
+
         {/* admin */}
-      </Router>
-    </div>
+      </Router >
+    </div >
   )
 }
 
